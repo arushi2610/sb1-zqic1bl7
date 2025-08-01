@@ -6,6 +6,7 @@ import MenuSection from './components/MenuSection';
 import CartSection from './components/CartSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
+import OrderOnlineSection from './components/OrderOnlineSection';
 import Footer from './components/Footer';
 
 function App() {
@@ -77,6 +78,10 @@ function App() {
             
             <section id="contact">
               <ContactSection />
+            </section>
+            
+            <section id="order-online">
+              <OrderOnlineSection />
             </section>
           </>
         )}

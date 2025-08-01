@@ -9,13 +9,11 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <div className="bg-red-600 p-2 rounded-full">
-                <Pizza className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Manager's</h3>
-                <p className="text-sm text-red-400 -mt-1">PIZZA</p>
-              </div>
+              <img 
+                src="/PHOTO-2025-06-13-09-00-06 (1).jpg" 
+                alt="Manager's Pizza Logo" 
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 mb-4">
               Fresh dough, bold flavors, and student-friendly fusion pizzas in Seattle's University District.
@@ -30,6 +28,7 @@ const Footer: React.FC = () => {
               <li><a href="#menu" className="text-gray-400 hover:text-white transition-colors">Menu</a></li>
               <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#order-online" className="text-gray-400 hover:text-white transition-colors">Order Online</a></li>
             </ul>
           </div>
 

@@ -25,7 +25,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
     { id: 'home', label: 'Home' },
     { id: 'menu', label: 'Menu' },
     { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'contact', label: 'Contact' },
+    { id: 'order-online', label: 'Order Online' }
   ];
 
   return (
@@ -40,13 +41,11 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               className="flex items-center space-x-2 cursor-pointer"
               onClick={() => onSectionChange('home')}
             >
-              <div className="bg-red-600 p-2 rounded-full">
-                <Pizza className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Manager's</h1>
-                <p className="text-xs text-red-600 -mt-1">PIZZA</p>
-              </div>
+              <img 
+                src="/PHOTO-2025-06-13-09-00-12 (1).jpg" 
+                alt="Manager's Pizza Logo" 
+                className="h-12 w-auto"
+              />
             </div>
 
             {/* Desktop Navigation */}
