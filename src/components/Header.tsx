@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Pizza, Menu, X, ShoppingCart, Phone, MapPin, Clock } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
@@ -9,17 +9,9 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const { state } = useCart();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -31,9 +23,10 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
-      }`}>
+      <header
+        className="fixed top-0 left-0 right-0 z-60 shadow-lg bg-[#EEEEEE]"
+        style={{ height: '64px' }}
+      >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -42,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               onClick={() => onSectionChange('home')}
             >
               <img 
-                src="/PHOTO-2025-06-13-09-00-12 (1).jpg" 
+                src="MP-whitelogo.jpg" 
                 alt="Manager's Pizza Logo" 
                 className="h-12 w-auto"
               />
@@ -69,11 +62,11 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
             <div className="hidden lg:flex items-center space-x-4 text-sm text-gray-600">
               <div className="flex items-center space-x-1">
                 <Phone className="h-4 w-4" />
-                <span>(206) 555-0123</span>
+                <span>(206) 413-5548</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Clock className="h-4 w-4" />
-                <span>Open 11am-11pm</span>
+                <span>Open 9am - 10pm EVERY DAY</span>
               </div>
             </div>
 
@@ -125,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               <div className="mt-4 pt-4 border-t border-gray-200 space-y-2 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
-                  <span>(206) 555-0123</span>
+                  <span>(206) 413-5548</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />
@@ -133,13 +126,16 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4" />
-                  <span>Open 11am-11pm Daily</span>
+                  <span>Open 9am - 10pm EVERY DAY</span>
                 </div>
               </div>
             </div>
           )}
         </div>
       </header>
+
+      {/* Add padding to main content so it is not hidden behind the fixed header */}
+      <div style={{ paddingTop: '64px' }} />
 
       {/* Sticky Order Now Button - Mobile Only */}
       <button

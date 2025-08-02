@@ -8,7 +8,7 @@ const AboutSection: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Manager's Pizza</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Where traditional Italian craftsmanship meets bold Indian flavors in Seattle's vibrant University District
+            Where bold Indian flavors meet handcrafted pizza in Seattle’s University District
           </p>
         </div>
 
@@ -17,20 +17,13 @@ const AboutSection: React.FC = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h3>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Manager's Pizza was born from a simple idea: bring together the best of two incredible food cultures. 
-                Our founder, a former restaurant manager with roots in both Italy and India, dreamed of creating a place 
-                where students and families could experience the perfect fusion of traditional pizza-making with the 
-                bold, aromatic spices of Indian cuisine.
+                Manager’s Pizza started with a simple goal: to bring together the best of two food worlds. With years of experience managing popular pizza spots, our founder set out to build something better: a cozy, welcoming place serving handcrafted pizzas with bold, unforgettable flavors.
               </p>
               <p>
-                Located in Seattle's bustling University District, we've become a beloved gathering spot for students, 
-                families, and food lovers who crave something both familiar and exciting. Our kitchen team crafts each 
-                pizza with hand-stretched dough made fresh daily, premium ingredients, and spice blends that transport 
-                your taste buds on an incredible journey.
+                Our menu blends classic Italian technique with vibrant Indian-inspired toppings. All made fresh with premium ingredients and homemade sauces. Located in the heart of the U District, we’re a go-to for students, families, and anyone craving a slice that’s both familiar and exciting.
               </p>
               <p>
-                From our signature Butter Chicken Pizza to classic Margherita, every dish tells a story of cultural 
-                fusion, quality ingredients, and the passion for bringing people together over great food.
+                From Butter Chicken Pizza to classic Margherita, every dish is made to bring people together.
               </p>
             </div>
           </div>
@@ -42,7 +35,7 @@ const AboutSection: React.FC = () => {
               className="rounded-2xl shadow-xl"
             />
             <div className="absolute -bottom-6 -left-6 bg-red-600 text-white p-6 rounded-2xl shadow-lg">
-              <div className="text-2xl font-bold">Est. 2019</div>
+              <div className="text-2xl font-bold">Est. 2025</div>
               <div className="text-sm">Serving Seattle</div>
             </div>
           </div>
@@ -55,7 +48,7 @@ const AboutSection: React.FC = () => {
               <Heart className="h-8 w-8 text-red-600" />
             </div>
             <h4 className="text-xl font-semibold text-gray-900 mb-2">Made with Love</h4>
-            <p className="text-gray-600">Every pizza is crafted with passion and attention to detail</p>
+            <p className="text-gray-600">Every pizza is crafted with passion</p>
           </div>
 
           <div className="text-center">
@@ -83,7 +76,8 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Team Photo Section */}
+{/*
+        
         <div className="bg-gray-50 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Meet Our Team</h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
@@ -108,6 +102,7 @@ const AboutSection: React.FC = () => {
             />
           </div>
         </div>
+        */}
       </div>
     </section>
   );

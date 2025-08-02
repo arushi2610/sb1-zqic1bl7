@@ -52,9 +52,8 @@ const ContactSection: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
                   <p className="text-gray-600">
-                    4512 University Way NE<br />
+                    4741 12th Ave, NE<br />
                     Seattle, WA 98105<br />
-                    University District
                   </p>
                 </div>
               </div>
@@ -88,9 +87,7 @@ const ContactSection: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Hours</h4>
                   <div className="text-gray-600 space-y-1">
-                    <p>Monday - Thursday: 11:00 AM - 10:00 PM</p>
-                    <p>Friday - Saturday: 11:00 AM - 11:00 PM</p>
-                    <p>Sunday: 12:00 PM - 10:00 PM</p>
+                    <p>OPEN 9am - 10pm EVERY DAY</p>
                   </div>
                 </div>
               </div>
@@ -143,7 +140,7 @@ const ContactSection: React.FC = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
-                        placeholder="(206) 555-0123"
+                        placeholder="(206) 413-5548"
                       />
                     </div>
                   </div>

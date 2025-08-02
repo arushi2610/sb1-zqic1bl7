@@ -26,7 +26,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOrderNow }) => {
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-          Fresh dough, bold flavors, and student-friendly fusion pizzas in Seattle's University District
+          Fresh dough, bold fusion, and handcrafted flavors in Seattle’s U District
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -62,7 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOrderNow }) => {
               </div>
             </div>
             <h3 className="text-lg font-semibold mb-2">Hours</h3>
-            <p className="text-gray-200">Daily<br />11:00 AM - 11:00 PM</p>
+            <p className="text-gray-200">Daily<br />9am - 10pm</p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
@@ -72,17 +72,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOrderNow }) => {
               </div>
             </div>
             <h3 className="text-lg font-semibold mb-2">Call Us</h3>
-            <p className="text-gray-200">(206) 555-0123<br />Order by Phone</p>
+            <p className="text-gray-200">(206) 413-5548<br />Order by Phone</p>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
+      */}
     </section>
   );
 };

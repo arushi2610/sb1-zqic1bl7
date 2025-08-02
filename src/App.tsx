@@ -60,7 +60,7 @@ function App() {
         
         {activeSection === 'cart' ? (
           <div className="pt-16">
-            <CartSection />
+            <CartSection onSectionChange={scrollToSection} activeSection={activeSection} />
           </div>
         ) : (
           <>
