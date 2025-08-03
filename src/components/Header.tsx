@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-60 shadow-lg bg-[#EEEEEE]"
+        className="fixed top-0 left-0 right-0 z-[9999] shadow-lg bg-[#EEEEEE]"
         style={{ height: '64px' }}
       >
         <div className="container mx-auto px-4">
@@ -137,13 +137,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
       {/* Add padding to main content so it is not hidden behind the fixed header */}
       <div style={{ paddingTop: '64px' }} />
 
-      {/* Sticky Order Now Button - Mobile Only */}
-      <button
-        onClick={() => onSectionChange('menu')}
-        className="md:hidden fixed bottom-4 right-4 z-40 bg-red-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105 font-semibold"
-      >
-        Order Now
-      </button>
     </>
   );
 };

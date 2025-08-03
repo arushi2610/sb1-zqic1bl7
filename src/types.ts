@@ -8,6 +8,9 @@ export interface MenuItem {
   dietary?: string[];
   sizes?: { name: string; price: number }[];
   crusts?: string[];
+  sauces?: string[];
+  toppings?: string[];
+  flavors?: string[];
 }
 
 export interface CartItem {

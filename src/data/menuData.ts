@@ -178,6 +178,27 @@ export const menuData: MenuItem[] = [
   { id: 'supreme-feast', name: 'Supreme Feast', description: 'A classic supreme with pepperoni, sausage, veggies, and cheese.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'white-delight', name: 'White Delight', description: 'Creamy white sauce, mozzarella, and garlic.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'garlic-ranch-feast', name: 'Garlic Ranch Feast', description: 'Garlic ranch base, chicken, and veggies.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  {
+    id: 'custom-pizza',
+    name: 'Build Your Own Pizza',
+    description: 'Choose your sauce, crust, toppings, and cheese to create your perfect pizza!',
+    image: '/MP-redlogo.jpg',
+    category: 'Build Your Own Pizza',
+    sizes: [
+      { name: 'Small (10")', price: 18.99 },
+      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Large (14")', price: 28.99 },
+      { name: 'XL (16")', price: 34.99 }
+    ],
+    crusts: ['Regular', 'Skinny'],
+    sauces: ['Red', 'Creamy Garlic', 'Sweet Chili', 'BBQ', 'Pesto'],
+    toppings: [
+      'Pepperoni', 'Italian Sausage', 'Bacon', 'Chicken(Grilled/BBQ/Marinated)', 'Ham', 'Beef', 'Salami',
+      'Mushrooms', 'Red Onion', 'Bell Peppers', 'Olives', 'Spinach', 'Tomato', 'Garlic', 'Jalapenos', 'Pineapple', 'Artichoke Hearts', 'Green Onions', 'Cilantro', 'Basil', 'Sun-dried Tomatoes', 'Green Chili', 'Marinated Paneer',
+    ],
+    price: 18.99,
+    dietary: [],
+  },
   { id: 'the-hamazon', name: 'The Hamazon', description: 'Ham, pineapple, and more.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'ham-it-up', name: 'Ham It Up', description: 'Ham, cheese, and classic toppings.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'meaty-union', name: 'Meaty Union', description: 'A meat lover’s dream.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
@@ -194,14 +215,14 @@ export const menuData: MenuItem[] = [
   { id: 'build-your-own', name: 'Build Your Own Pizza', description: 'Choose your sauce, crust, toppings, and size. Sauces: Red, Garlic, Sweet Chili, BBQ, Pesto. Crust: Skinny or Regular. Toppings: Full range of meats, veggies & cheese. Sizes: Small (10") to XL (16") — from $18.99 to $34.99', category: 'Build Your Own Pizza', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
 
   // 🍗 Wings
-  { id: 'classic-wings-10', name: 'Classic Wings (10 pcs)', description: 'Choose your flavor: Buffalo, BBQ, Mango Habanero, Sweet Chili, Teriyaki, Lemon Pepper, Garlic Parmesan, Tangy Tandoori, Pickle Pop.', price: 12.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings' },
-  { id: 'classic-wings-20', name: 'Classic Wings (20 pcs)', description: 'Choose your flavor: Buffalo, BBQ, Mango Habanero, Sweet Chili, Teriyaki, Lemon Pepper, Garlic Parmesan, Tangy Tandoori, Pickle Pop.', price: 22.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings' },
-  { id: 'boneless-wings-half', name: 'Boneless Wings (½ lb)', description: 'Choose your flavor: Buffalo, BBQ, Mango Habanero, Sweet Chili, Teriyaki, Lemon Pepper, Garlic Parmesan, Tangy Tandoori, Pickle Pop.', price: 10.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings' },
-  { id: 'boneless-wings-1lb', name: 'Boneless Wings (1 lb)', description: 'Choose your flavor: Buffalo, BBQ, Mango Habanero, Sweet Chili, Teriyaki, Lemon Pepper, Garlic Parmesan, Tangy Tandoori, Pickle Pop.', price: 16.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings' },
+  { id: 'classic-wings-10', name: 'Classic Wings (10 pcs)', description: 'Choose your flavor!', price: 12.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
+  { id: 'classic-wings-20', name: 'Classic Wings (20 pcs)', description: 'Choose your flavor!', price: 22.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
+  { id: 'boneless-wings-half', name: 'Boneless Wings (½ lb)', description: 'Choose your flavor!', price: 10.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
+  { id: 'boneless-wings-1lb', name: 'Boneless Wings (1 lb)', description: 'Choose your flavor!', price: 16.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
 
   // 🍟 Starters & Sides
   { id: 'garlic-bread-cheese', name: 'Garlic Bread with Cheese', description: 'Cheesy garlic bread.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'garlic-sticks', name: 'Garlic Sticks', description: 'Classic garlic sticks.', category: 'Starters & Sides', dietary: ['V'], price: 6.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'garlic-sticks', name: 'Garlic Sticks with Cheese', description: 'Classic garlic sticks.', category: 'Starters & Sides', dietary: ['V'], price: 6.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'pesto-sticks', name: 'Pesto Sticks', description: 'Pesto-flavored breadsticks.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'masala-breadsticks', name: 'Masala Breadsticks', description: 'Indian-spiced breadsticks.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'mozzarella-sticks', name: 'Mozzarella Sticks (8 pcs)', description: 'Breaded mozzarella sticks.', category: 'Starters & Sides', dietary: ['V'], price: 9.99, image: 'https://images.pexels.com/photos/4194862/pexels-photo-4194862.jpeg?auto=compress&cs=tinysrgb&w=800' },

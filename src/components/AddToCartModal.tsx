@@ -9,14 +9,22 @@ interface AddToCartModalProps {
   onAddToCart: (item: MenuItem, size?: { name: string; price: number }, crust?: string) => void;
 }
 
+
 const AddToCartModal: React.FC<AddToCartModalProps> = ({ item, isOpen, onClose, onAddToCart }) => {
   const [selectedSize, setSelectedSize] = useState(item.sizes?.[0] || null);
   const [selectedCrust, setSelectedCrust] = useState(item.crusts?.[0] || '');
+  const [selectedFlavor, setSelectedFlavor] = useState(item.flavors?.[0] || '');
 
   if (!isOpen) return null;
 
   const handleAddToCart = () => {
-    onAddToCart(item, selectedSize || undefined, selectedCrust || undefined);
+    // Pass selectedFlavor as crust if it's a wings item, otherwise as normal
+    if (item.flavors && item.flavors.length > 0) {
+      // For wings, pass flavor as 'crust' argument (or extend CartItem if needed)
+      onAddToCart(item, selectedSize || undefined, selectedFlavor || undefined);
+    } else {
+      onAddToCart(item, selectedSize || undefined, selectedCrust || undefined);
+    }
   };
 
   return (
@@ -68,29 +76,53 @@ const AddToCartModal: React.FC<AddToCartModalProps> = ({ item, isOpen, onClose, 
             </div>
           )}
 
-          {/* Crust Selection */}
-          {item.crusts && item.crusts.length > 0 && (
+          {/* Crust or Flavor Selection */}
+          {item.flavors && item.flavors.length > 0 ? (
             <div className="mb-6">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Choose Crust</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Choose Flavor</h4>
               <div className="grid grid-cols-1 gap-2">
-                {item.crusts.map((crust) => (
+                {item.flavors.map((flavor) => (
                   <label
-                    key={crust}
+                    key={flavor}
                     className="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-red-300 transition-colors"
                   >
                     <input
                       type="radio"
-                      name="crust"
-                      value={crust}
-                      checked={selectedCrust === crust}
-                      onChange={() => setSelectedCrust(crust)}
+                      name="flavor"
+                      value={flavor}
+                      checked={selectedFlavor === flavor}
+                      onChange={() => setSelectedFlavor(flavor)}
                       className="mr-3 text-red-600"
                     />
-                    <span className="font-medium">{crust}</span>
+                    <span className="font-medium">{flavor}</span>
                   </label>
                 ))}
               </div>
             </div>
+          ) : (
+            item.crusts && item.crusts.length > 0 && (
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Choose Crust</h4>
+                <div className="grid grid-cols-1 gap-2">
+                  {item.crusts.map((crust) => (
+                    <label
+                      key={crust}
+                      className="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-red-300 transition-colors"
+                    >
+                      <input
+                        type="radio"
+                        name="crust"
+                        value={crust}
+                        checked={selectedCrust === crust}
+                        onChange={() => setSelectedCrust(crust)}
+                        className="mr-3 text-red-600"
+                      />
+                      <span className="font-medium">{crust}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )
           )}
 
           {/* Dietary Information */}

@@ -34,15 +34,14 @@ function App() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    if (sectionId === 'cart') {
-      setActiveSection('cart');
-      return;
-    }
-
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
+    setActiveSection(sectionId);
+    if (sectionId !== 'cart') {
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
   };
 

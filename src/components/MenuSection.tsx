@@ -4,10 +4,12 @@ import { menuData, categories } from '../data/menuData';
 import { MenuItem } from '../types';
 import { useCart } from '../context/CartContext';
 import AddToCartModal from './AddToCartModal';
+import BuildYourOwnPizzaModal from './BuildYourOwnPizzaModal';
 
 const MenuSection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('Team Starters');
+  const [activeCategory, setActiveCategory] = useState("Manager's Picks");
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
+  const [showBuildModal, setShowBuildModal] = useState(false);
   const { dispatch } = useCart();
 
   const handleAddToCart = (menuItem: MenuItem, size?: { name: string; price: number }, crust?: string) => {
@@ -19,11 +21,29 @@ const MenuSection: React.FC = () => {
   };
 
   const handleQuickAdd = (item: MenuItem) => {
+    if (item.name === 'Build Your Own Pizza') {
+      setSelectedItem(item);
+      setShowBuildModal(true);
+      return;
+    }
     if (item.sizes && item.sizes.length > 0) {
       setSelectedItem(item);
     } else {
       handleAddToCart(item);
     }
+  };
+
+  const handleAddCustomPizza = (menuItem: MenuItem, size: { name: string; price: number }, crust: string, sauce: string, toppings: string[]) => {
+    // Compose a custom name/description for the pizza
+    const customItem = {
+      ...menuItem,
+      name: `Custom Pizza (${size.name})`,
+      description: `Crust: ${crust}, Sauce: ${sauce}, Toppings: ${toppings.join(', ')}`,
+      price: size.price
+    };
+    handleAddToCart(customItem, size, crust);
+    setShowBuildModal(false);
+    setSelectedItem(null);
   };
 
   const getDietaryBadge = (dietary: string) => {
@@ -125,12 +145,20 @@ const MenuSection: React.FC = () => {
       </div>
 
       {/* Add To Cart Modal */}
-      {selectedItem && (
+      {selectedItem && !showBuildModal && (
         <AddToCartModal
           item={selectedItem}
           isOpen={!!selectedItem}
           onClose={() => setSelectedItem(null)}
           onAddToCart={handleAddToCart}
+        />
+      )}
+      {selectedItem && showBuildModal && (
+        <BuildYourOwnPizzaModal
+          item={selectedItem}
+          isOpen={showBuildModal}
+          onClose={() => { setShowBuildModal(false); setSelectedItem(null); }}
+          onAddToCart={handleAddCustomPizza}
         />
       )}
     </section>
