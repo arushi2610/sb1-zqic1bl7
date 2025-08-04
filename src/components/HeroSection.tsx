@@ -1,11 +1,10 @@
 import React from 'react';
 import { ArrowRight, MapPin, Phone, Clock } from 'lucide-react';
 
-interface HeroSectionProps {
-  onOrderNow: () => void;
-}
-
-const HeroSection: React.FC<HeroSectionProps> = ({ onOrderNow }) => {
+const HeroSection: React.FC = () => {
+  const handleOrderNow = () => {
+    window.location.href = 'https://managerspizza.hungerrush.com/Order/OrderType';
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -31,18 +30,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOrderNow }) => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <button
-            onClick={onOrderNow}
+            onClick={handleOrderNow}
             className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
           >
             <span>Order Now</span>
             <ArrowRight className="h-5 w-5" />
           </button>
-          
-          <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
-            View Menu
-          </button>
         </div>
-
         {/* Quick Info Cards */}
         <div className="grid md:grid-cols-3 gap-6 mt-16">
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">

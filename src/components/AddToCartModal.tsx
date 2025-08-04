@@ -1,3 +1,4 @@
+// This component is no longer used and can be deleted.
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { MenuItem } from '../types';

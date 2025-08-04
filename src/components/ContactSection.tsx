@@ -93,14 +93,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="mt-8 bg-gray-300 rounded-2xl h-64 flex items-center justify-center">
-              <div className="text-center text-gray-600">
-                <MapPin className="h-12 w-12 mx-auto mb-2" />
-                <p className="font-medium">Interactive Map</p>
-                <p className="text-sm">Google Maps integration would go here</p>
-              </div>
-            </div>
+            {/* Map removed as requested */}
           </div>
 
           {/* Contact Form */}

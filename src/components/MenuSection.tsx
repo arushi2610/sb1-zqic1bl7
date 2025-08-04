@@ -1,63 +1,72 @@
 import React, { useState } from 'react';
-import { Plus, ShoppingCart } from 'lucide-react';
-import { menuData, categories } from '../data/menuData';
+import { menuData } from '../data/menuData';
 import { MenuItem } from '../types';
-import { useCart } from '../context/CartContext';
-import AddToCartModal from './AddToCartModal';
-import BuildYourOwnPizzaModal from './BuildYourOwnPizzaModal';
 
 const MenuSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("Manager's Picks");
-  const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
-  const [showBuildModal, setShowBuildModal] = useState(false);
-  const { dispatch } = useCart();
+  const [showBuildInfo, setShowBuildInfo] = useState(false);
+  const [showWingsFlavors, setShowWingsFlavors] = useState(false);
 
-  const handleAddToCart = (menuItem: MenuItem, size?: { name: string; price: number }, crust?: string) => {
-    dispatch({
-      type: 'ADD_ITEM',
-      payload: { menuItem, size, crust }
-    });
-    setSelectedItem(null);
-  };
+  // For Salads, extract all unique sizes/prices from items (for the active category only)
+  let saladSizesLine = null;
+  if (activeCategory === 'Salads') {
+    const saladItems = menuData.filter((item: MenuItem) => item.category === 'Salads' && item.sizes && item.sizes.length > 0);
+    const allSizes = saladItems.flatMap((item: MenuItem) => item.sizes || []);
+    const uniqueSizes = Array.from(new Map(allSizes.map((size) => [size.name + size.price, size])).values());
+    if (uniqueSizes.length > 1) {
+      saladSizesLine = (
+        <div className="text-sm font-semibold text-red-600 mb-4 text-center">
+          Sizes: {uniqueSizes.map((size) => `${size.name} ($${size.price.toFixed(2)})`).join(' | ')}
+        </div>
+      );
+    } else if (uniqueSizes.length === 1) {
+      saladSizesLine = (
+        <div className="text-sm font-semibold text-red-600 mb-4 text-center">
+          Price: ${uniqueSizes[0].price.toFixed(2)}
+        </div>
+      );
+    }
+  }
 
-  const handleQuickAdd = (item: MenuItem) => {
+
+  // Get all unique categories from menuData
+  const categories = Array.from(new Set(menuData.map(item => item.category)));
+
+  // Filter and dedupe menu items for the selected category
+  let filteredMenuItems = menuData.filter((item: MenuItem) => {
     if (item.name === 'Build Your Own Pizza') {
-      setSelectedItem(item);
-      setShowBuildModal(true);
-      return;
+      return item.category === 'Build Your Own Pizza' && activeCategory === 'Build Your Own Pizza';
     }
-    if (item.sizes && item.sizes.length > 0) {
-      setSelectedItem(item);
-    } else {
-      handleAddToCart(item);
-    }
-  };
-
-  const handleAddCustomPizza = (menuItem: MenuItem, size: { name: string; price: number }, crust: string, sauce: string, toppings: string[]) => {
-    // Compose a custom name/description for the pizza
-    const customItem = {
-      ...menuItem,
-      name: `Custom Pizza (${size.name})`,
-      description: `Crust: ${crust}, Sauce: ${sauce}, Toppings: ${toppings.join(', ')}`,
-      price: size.price
-    };
-    handleAddToCart(customItem, size, crust);
-    setShowBuildModal(false);
-    setSelectedItem(null);
-  };
-
-  const getDietaryBadge = (dietary: string) => {
-    const badges = {
-      'V': { label: 'Vegetarian', color: 'bg-green-100 text-green-800' },
-      'VE': { label: 'Vegan', color: 'bg-green-100 text-green-800' },
-      'GF': { label: 'Gluten Free', color: 'bg-blue-100 text-blue-800' },
-      'Halal': { label: 'Halal', color: 'bg-purple-100 text-purple-800' }
-    };
-    
-    return badges[dietary as keyof typeof badges] || { label: dietary, color: 'bg-gray-100 text-gray-800' };
-  };
-
-  const filteredItems = menuData.filter(item => item.category === activeCategory);
+    return item.category === activeCategory && item.name !== 'Build Your Own Pizza';
+  });
+  // Deduplicate salads by name, keeping only the first with a price, and remove those without a price
+  if (activeCategory === 'Salads') {
+    const seen = new Set();
+    filteredMenuItems = filteredMenuItems.filter(item => {
+      if (item.category !== 'Salads') return true;
+      // Check for price
+      let hasPrice = false;
+      if (item.sizes && item.sizes.length > 0) {
+        hasPrice = item.sizes.some(size => typeof size.price === 'number');
+      } else if (typeof item.price === 'number') {
+        hasPrice = true;
+      }
+      if (!hasPrice) return false;
+      if (seen.has(item.name)) return false;
+      seen.add(item.name);
+      return true;
+    });
+  }
+  if (activeCategory === 'Build Your Own Pizza') {
+    const seen = new Set();
+    filteredMenuItems = filteredMenuItems.filter(item => {
+      if (item.name === 'Build Your Own Pizza') {
+        if (seen.has(item.name)) return false;
+        seen.add(item.name);
+      }
+      return true;
+    });
+  }
 
   return (
     <section id="menu" className="py-20 bg-gray-50">
@@ -88,81 +97,64 @@ const MenuSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Menu Items Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredItems.map((item) => (
-            <div key={item.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="relative">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-4 left-4 flex flex-wrap gap-1">
-                  {item.dietary?.map((diet) => {
-                    const badge = getDietaryBadge(diet);
-                    return (
-                      <span
-                        key={diet}
-                        className={`text-xs px-2 py-1 rounded-full font-medium ${badge.color}`}
-                      >
-                        {badge.label}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
+        {/* Show a single See All Flavors button above the wings grid if category is Wings */}
+        {activeCategory === 'Wings' && (
+          <div className="flex justify-center mb-6">
+            <button
+              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300"
+              onClick={() => setShowWingsFlavors(true)}
+            >
+              See All Flavors
+            </button>
+          </div>
+        )}
 
+        {/* Salad sizes/prices line at the top of the salads grid */}
+        {activeCategory === 'Salads' && saladSizesLine}
+
+        {/* Menu Items Grid for the selected category only */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredMenuItems.map((item: MenuItem) => (
+            <div key={item.name} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-48 object-cover object-center"
+              />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{item.name}</h3>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
-                
-                <div className="flex items-center justify-between">
+                {/* Only show price for non-salad or single-size salad items */}
+                {item.category === 'Salads' && item.sizes && item.sizes.length > 1 ? null : (
                   <div className="text-2xl font-bold text-red-600">
-                    ${item.sizes ? `${item.sizes[0].price}` : item.price.toFixed(2)}
-                    {item.sizes && <span className="text-sm text-gray-500 ml-1">+</span>}
+                    {item.sizes && item.sizes.length === 1
+                      ? `$${item.sizes[0].price.toFixed(2)}`
+                      : (typeof item.price === 'number' ? `$${item.price.toFixed(2)}` : '')}
                   </div>
-                  
-                  <button
-                    onClick={() => handleQuickAdd(item)}
-                    className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
-                  >
-                    <Plus className="h-5 w-5" />
-                  </button>
-                </div>
+                )}
               </div>
             </div>
           ))}
         </div>
 
-        {filteredItems.length === 0 && (
-          <div className="text-center py-16">
-            <ShoppingCart className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">Coming Soon!</h3>
-            <p className="text-gray-500">We're working on adding items to this category.</p>
+        {/* Wings Flavors Modal */}
+        {showWingsFlavors && activeCategory === 'Wings' && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative">
+              <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl" onClick={() => setShowWingsFlavors(false)}>&times;</button>
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">Wings Flavors</h2>
+              <ul className="list-disc pl-6 text-gray-800">
+                {Array.from(new Set(menuData.filter(i => i.category === 'Wings' && i.flavors).flatMap(i => i.flavors!))).map((flavor) => (
+                  <li key={flavor} className="mb-1">{flavor}</li>
+                ))}
+              </ul>
+              <div className="text-gray-500 text-sm mt-4">Choose any flavor for your wings order!</div>
+            </div>
           </div>
         )}
       </div>
-
-      {/* Add To Cart Modal */}
-      {selectedItem && !showBuildModal && (
-        <AddToCartModal
-          item={selectedItem}
-          isOpen={!!selectedItem}
-          onClose={() => setSelectedItem(null)}
-          onAddToCart={handleAddToCart}
-        />
-      )}
-      {selectedItem && showBuildModal && (
-        <BuildYourOwnPizzaModal
-          item={selectedItem}
-          isOpen={showBuildModal}
-          onClose={() => { setShowBuildModal(false); setSelectedItem(null); }}
-          onAddToCart={handleAddCustomPizza}
-        />
-      )}
     </section>
   );
-};
+}
 
 export default MenuSection;

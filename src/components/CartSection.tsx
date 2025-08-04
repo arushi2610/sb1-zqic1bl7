@@ -30,8 +30,7 @@ const CartSection: React.FC<CartSectionProps> = ({ onSectionChange, activeSectio
 
   const handleCheckout = (e: React.FormEvent) => {
     e.preventDefault();
-    setOrderPlaced(true);
-    dispatch({ type: 'CLEAR_CART' });
+    window.location.href = 'https://managerspizza.hungerrush.com/Order/OrderType';
   };
 
   const generateTimeSlots = () => {

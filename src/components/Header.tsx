@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Pizza, Menu, X, ShoppingCart, Phone, MapPin, Clock } from 'lucide-react';
-import { useCart } from '../context/CartContext';
 
 interface HeaderProps {
   activeSection: string;
@@ -9,7 +8,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { state } = useCart();
 
 
 
@@ -70,20 +68,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               </div>
             </div>
 
-            {/* Cart & Mobile Menu */}
+            {/* Mobile Menu only (cart icon removed) */}
             <div className="flex items-center space-x-4">
-              <button
-                onClick={() => onSectionChange('cart')}
-                className="relative p-2 text-gray-700 hover:text-red-600 transition-colors"
-              >
-                <ShoppingCart className="h-6 w-6" />
-                {state.itemCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                    {state.itemCount}
-                  </span>
-                )}
-              </button>
-
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="md:hidden p-2 text-gray-700 hover:text-red-600 transition-colors"

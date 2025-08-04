@@ -243,12 +243,9 @@ export const menuData: MenuItem[] = [
 
   // 🥗 Salads
   { id: 'salad-garden', name: 'Garden Salad', description: 'Fresh, crunchy, and loaded with toppings.', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-garden-family', name: 'Garden Salad (Family)', description: 'Family size garden salad.', price: 15.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'salad-greek', name: 'Greek Salad', description: 'Greek salad with feta and olives.', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-greek-family', name: 'Greek Salad (Family)', description: 'Family size Greek salad.', price: 15.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'salad-caesar', name: 'Caesar Salad', description: 'Classic Caesar salad.', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-caesar-family', name: 'Caesar Salad (Family)', description: 'Family size Caesar salad.', price: 15.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-chicken-caesar', name: 'Chicken Caesar Salad', description: 'Caesar salad with chicken.', price: 11.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'salad-chicken-caesar', name: 'Chicken Caesar Salad + $3', description: 'Caesar salad with chicken.', price: 11.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'salad-high-protein', name: 'High Protein Salad', description: 'With paneer or chicken.', price: 11.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'salad-antipasto', name: 'Antipasto Salad', description: 'Classic antipasto salad.', price: 11.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
 

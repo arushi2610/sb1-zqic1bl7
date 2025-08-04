@@ -35,84 +35,19 @@ const OrderOnlineSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Delivery Platforms */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-          {deliveryPlatforms.map((platform) => (
-            <div key={platform.name} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center">
-                      <img
-                        src={platform.logo}
-                        alt={`${platform.name} logo`}
-                        className="w-12 h-12 object-contain"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900">{platform.name}</h3>
-                      <p className="text-gray-600">{platform.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-1 text-yellow-500">
-                    <Star className="h-5 w-5 fill-current" />
-                    <span className="font-semibold text-gray-900">{platform.rating}</span>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <Clock className="h-6 w-6 text-red-600 mx-auto mb-2" />
-                    <div className="text-sm text-gray-600">Delivery Time</div>
-                    <div className="font-semibold text-gray-900">{platform.deliveryTime}</div>
-                  </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <Truck className="h-6 w-6 text-red-600 mx-auto mb-2" />
-                    <div className="text-sm text-gray-600">Delivery Fee</div>
-                    <div className="font-semibold text-gray-900">{platform.deliveryFee}</div>
-                  </div>
-                </div>
-
-                <a
-                  href={platform.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-full ${platform.color} text-white py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2`}
-                >
-                  <span>Order on {platform.name}</span>
-                  <ExternalLink className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Direct Order CTA */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 text-center max-w-2xl mx-auto">
-          <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-            <img 
-              src="/PHOTO-2025-06-13-09-00-06 (1).jpg" 
-              alt="Manager's Pizza Logo" 
-              className="h-8 w-auto"
-            />
-          </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Order Direct & Save</h3>
-          <p className="text-gray-600 mb-6">
-            Skip the delivery fees and order directly through our website for pickup. 
-            Fresh, hot pizza ready when you are!
-          </p>
-          <button
-            onClick={() => {
-              const menuSection = document.getElementById('menu');
-              if (menuSection) {
-                menuSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+        {/* Single Order Online Button */}
+        <div className="flex justify-center mb-16">
+          <a
+            href="https://managerspizza.hungerrush.com/Order/OrderType"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
           >
-            Order for Pickup
-          </button>
+            Order Online
+          </a>
         </div>
+
+        {/* Direct Order CTA removed as requested */}
 
         {/* Features */}
         <div className="grid md:grid-cols-3 gap-8 mt-16">

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { CartProvider } from './context/CartContext';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import MenuSection from './components/MenuSection';
-import CartSection from './components/CartSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import OrderOnlineSection from './components/OrderOnlineSection';
 import Footer from './components/Footer';
 
-function App() {
+export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
@@ -45,50 +43,28 @@ function App() {
     }
   };
 
-  const handleOrderNow = () => {
-    scrollToSection('menu');
-  };
-
   return (
-    <CartProvider>
-      <div className="min-h-screen bg-white">
-        <Header 
-          activeSection={activeSection} 
-          onSectionChange={scrollToSection} 
-        />
-        
-        {activeSection === 'cart' ? (
-          <div className="pt-16">
-            <CartSection onSectionChange={scrollToSection} activeSection={activeSection} />
-          </div>
-        ) : (
-          <>
-            <section id="home">
-              <HeroSection onOrderNow={handleOrderNow} />
-            </section>
-            
-            <section id="menu">
-              <MenuSection />
-            </section>
-            
-            <section id="about">
-              <AboutSection />
-            </section>
-            
-            <section id="contact">
-              <ContactSection />
-            </section>
-            
-            <section id="order-online">
-              <OrderOnlineSection />
-            </section>
-          </>
-        )}
-        
-        <Footer />
-      </div>
-    </CartProvider>
+    <div className="min-h-screen bg-white">
+      <Header 
+        activeSection={activeSection} 
+        onSectionChange={scrollToSection} 
+      />
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="menu">
+        <MenuSection />
+      </section>
+      <section id="about">
+        <AboutSection />
+      </section>
+      <section id="contact">
+        <ContactSection />
+      </section>
+      <section id="order-online">
+        <OrderOnlineSection />
+      </section>
+      <Footer />
+    </div>
   );
 }
-
-export default App;
