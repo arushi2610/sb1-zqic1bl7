@@ -5,7 +5,8 @@ import { MenuItem } from '../types';
 const MenuSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("Manager's Picks");
   const [showBuildInfo, setShowBuildInfo] = useState(false);
-  const [showWingsFlavors, setShowWingsFlavors] = useState(false);
+  const buildInfoText = `Crust: Skinny, Regular.\nSauce: Red Sauce, Creamy Garlic Sauce, Sweet & Chili Sauce, BBQ Sauce, Pesto sauce.\nCheese: 100% Whole Milk Mozzarella Cheese.\nMeats: Ham, Pepperoni, Salami, Italian Sausage, Ground Beef, Bacon, Chicken (Grilled, BBQ, Marinated).\nVeggies: Spinach, Mushroom, Red Onion, Bell Pepper, Tomato, Garlic, Jalapeño, Olive, Pineapple, Artichoke Hearts, Green Onion, Cilantro, Basil, Sun-Dried Tomato, Fresh tomato, Green Chili, Marinated Paneer.`;
+  const [showWingsFlavors, setShowWingsFlavors] = useState<{ open: boolean; itemName: string | null }>({ open: false, itemName: null });
 
   // For Salads, extract all unique sizes/prices from items (for the active category only)
   let saladSizesLine = null;
@@ -34,9 +35,11 @@ const MenuSection: React.FC = () => {
 
   // Filter and dedupe menu items for the selected category
   let filteredMenuItems = menuData.filter((item: MenuItem) => {
-    if (item.name === 'Build Your Own Pizza') {
-      return item.category === 'Build Your Own Pizza' && activeCategory === 'Build Your Own Pizza';
+    if (activeCategory === 'Build Your Own Pizza') {
+      // Only show Build Your Own Pizza in its own section
+      return item.name === 'Build Your Own Pizza';
     }
+    // For all other categories, exclude Build Your Own Pizza
     return item.category === activeCategory && item.name !== 'Build Your Own Pizza';
   });
   // Deduplicate salads by name, keeping only the first with a price, and remove those without a price
@@ -95,24 +98,12 @@ const MenuSection: React.FC = () => {
               </button>
             ))}
           </div>
+          {activeCategory === 'Salads' && (
+            <div className="text-base font-semibold text-red-700 text-center mt-6 mb-2">
+              INDIVIDUAL: $8.99, FAMILY: $15.99
+            </div>
+          )}
         </div>
-
-        {/* Show a single See All Flavors button above the wings grid if category is Wings */}
-        {activeCategory === 'Wings' && (
-          <div className="flex justify-center mb-6">
-            <button
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300"
-              onClick={() => setShowWingsFlavors(true)}
-            >
-              See All Flavors
-            </button>
-          </div>
-        )}
-
-        {/* Salad sizes/prices line at the top of the salads grid */}
-        {activeCategory === 'Salads' && saladSizesLine}
-
-        {/* Menu Items Grid for the selected category only */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredMenuItems.map((item: MenuItem) => (
             <div key={item.name} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
@@ -122,7 +113,29 @@ const MenuSection: React.FC = () => {
                 className="w-full h-48 object-cover object-center"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.name}</h3>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-xl font-bold text-gray-900">{item.name}</h3>
+                  {item.name === 'Build Your Own Pizza' && (
+                    <button
+                      className="ml-2 px-4 py-2 text-sm font-bold border-2 border-red-600 text-red-600 bg-transparent rounded-full shadow-sm hover:bg-red-50 hover:text-red-700 hover:border-red-700 hover:scale-105 transition-all duration-200 relative z-30 focus:outline-none focus:ring-2 focus:ring-red-300"
+                      style={{ position: 'relative' }}
+                      onClick={() => setShowBuildInfo(true)}
+                      aria-label="Show Build Your Own Pizza Info"
+                    >
+                      Info
+                    </button>
+                  )}
+                  {item.category === 'Wings' && item.flavors && item.flavors.length > 0 && (
+                    <button
+                      className="ml-2 px-4 py-2 text-sm font-bold bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-full shadow-lg border border-yellow-500 hover:from-yellow-500 hover:to-orange-600 hover:scale-105 transition-all duration-200 relative z-30 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                      style={{ position: 'relative' }}
+                      onClick={() => setShowWingsFlavors({ open: true, itemName: item.name })}
+                      aria-label={`Show flavors for ${item.name}`}
+                    >
+                      Flavors
+                    </button>
+                  )}
+                </div>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
                 {/* Only show price for non-salad or single-size salad items */}
                 {item.category === 'Salads' && item.sizes && item.sizes.length > 1 ? null : (
@@ -136,15 +149,32 @@ const MenuSection: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Wings Flavors Modal */}
-        {showWingsFlavors && activeCategory === 'Wings' && (
+        {/* Build Your Own Pizza Info Modal */}
+        {showBuildInfo && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative">
-              <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl" onClick={() => setShowWingsFlavors(false)}>&times;</button>
-              <h2 className="text-2xl font-bold mb-4 text-gray-900">Wings Flavors</h2>
+              <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl" onClick={() => setShowBuildInfo(false)}>&times;</button>
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">Build Your Own Pizza Info</h2>
+              <div className="text-gray-800 text-sm whitespace-pre-wrap">
+                <strong>Crust:</strong> Skinny, Regular<br/>
+                <strong>Sauce:</strong> Red Sauce, Creamy Garlic Sauce, Sweet & Chili Sauce, BBQ Sauce, Pesto sauce<br/>
+                <strong>Cheese:</strong> 100% Whole Milk Mozzarella Cheese<br/>
+                <strong>Meats:</strong> Ham, Pepperoni, Salami, Italian Sausage, Ground Beef, Bacon, Chicken (Grilled, BBQ, Marinated)<br/>
+                <strong>Veggies:</strong> Spinach, Mushroom, Red Onion, Bell Pepper, Tomato, Garlic, Jalapeño, Olive, Pineapple, Artichoke Hearts, Green Onion, Cilantro, Basil, Sun-Dried Tomato, Fresh tomato, Green Chili, Marinated Paneer
+              </div>
+            </div>
+          </div>
+        )}
+        </div>
+
+        {/* Wings Flavors Modal (per item) */}
+        {showWingsFlavors.open && showWingsFlavors.itemName && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative">
+              <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl" onClick={() => setShowWingsFlavors({ open: false, itemName: null })}>&times;</button>
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">{showWingsFlavors.itemName} Flavors</h2>
               <ul className="list-disc pl-6 text-gray-800">
-                {Array.from(new Set(menuData.filter(i => i.category === 'Wings' && i.flavors).flatMap(i => i.flavors!))).map((flavor) => (
+                {menuData.find(i => i.name === showWingsFlavors.itemName)?.flavors?.map((flavor) => (
                   <li key={flavor} className="mb-1">{flavor}</li>
                 ))}
               </ul>
@@ -152,9 +182,7 @@ const MenuSection: React.FC = () => {
             </div>
           </div>
         )}
-      </div>
     </section>
   );
 }
-
 export default MenuSection;
