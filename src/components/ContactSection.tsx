@@ -39,7 +39,7 @@ const ContactSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Contact Information */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Get in Touch</h3>
@@ -98,7 +98,7 @@ const ContactSection: React.FC = () => {
 
           {/* Contact Form */}
           <div>
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
               
               {isSubmitted ? (
@@ -111,7 +111,7 @@ const ContactSection: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                       <input
@@ -166,7 +166,7 @@ const ContactSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                    className="w-full bg-red-600 hover:bg-red-700 text-white py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                   >
                     <Send className="h-5 w-5" />
                     <span>Send Message</span>

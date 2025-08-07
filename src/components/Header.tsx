@@ -42,17 +42,33 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => onSectionChange(item.id)}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    activeSection === item.id
-                      ? 'text-red-600'
-                      : 'text-gray-700 hover:text-red-600'
-                  }`}
-                >
-                  {item.label}
-                </button>
+                item.id === 'order-online' ? (
+                  <a
+                    key={item.id}
+                    href="https://managerspizza.hungerrush.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-sm font-medium transition-colors duration-200 ${
+                      activeSection === item.id
+                        ? 'text-red-600'
+                        : 'text-gray-700 hover:text-red-600'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <button
+                    key={item.id}
+                    onClick={() => onSectionChange(item.id)}
+                    className={`text-sm font-medium transition-colors duration-200 ${
+                      activeSection === item.id
+                        ? 'text-red-600'
+                        : 'text-gray-700 hover:text-red-600'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                )
               ))}
             </nav>
 
@@ -84,20 +100,37 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
             <div className="md:hidden border-t border-gray-200 py-4">
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <button
+                  item.id === 'order-online' ? (
+                  <a
                     key={item.id}
-                    onClick={() => {
-                      onSectionChange(item.id);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className={`text-left text-sm font-medium transition-colors duration-200 ${
-                      activeSection === item.id
-                        ? 'text-red-600'
-                        : 'text-gray-700 hover:text-red-600'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
+                    href="https://managerspizza.hungerrush.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-left text-sm font-medium transition-colors duration-200 ${
+                        activeSection === item.id
+                          ? 'text-red-600'
+                          : 'text-gray-700 hover:text-red-600'
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        onSectionChange(item.id);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className={`text-left text-sm font-medium transition-colors duration-200 ${
+                        activeSection === item.id
+                          ? 'text-red-600'
+                          : 'text-gray-700 hover:text-red-600'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  )
                 ))}
               </nav>
               

@@ -8,16 +8,13 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
+            <div className="flex items-center space-x-2 -mt-[50px] mb-2">
               <img 
-                src="/MP-whitelogo.jpg" 
+                src="/removebg-pizzalogo.png" 
                 alt="Manager's Pizza Logo" 
-                className="h-10 w-auto"
+                className="h-24 md:h-32 w-auto"
               />
             </div>
-            <p className="text-gray-400 mb-4">
-              Fresh dough, bold flavors, and student-friendly fusion pizzas in Seattle's University District.
-            </p>
           </div>
 
           {/* Quick Links */}
@@ -66,7 +63,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 Manager's Pizza. All rights reserved.
+            © 2025 Manager's Pizza. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-2 text-gray-400 text-sm">

@@ -19,10 +19,9 @@ const HeroSection: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Manager's
-          <span className="block text-red-400">Pizza</span>
-        </h1>
+        <div className="flex justify-center mb-0">
+          <img src="/removebg-pizzalogo.png" alt="Manager's Pizza Logo" className="h-52 md:h-72 w-auto" />
+        </div>
         
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
           Fresh dough, bold fusion, and handcrafted flavors in Seattle’s U District
