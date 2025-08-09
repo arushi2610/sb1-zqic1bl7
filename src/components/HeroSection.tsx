@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             <h3 className="text-lg font-semibold mb-2">Location</h3>
-            <p className="text-gray-200">University District<br />Seattle, WA</p>
+            <p className="text-gray-200">4741 12th Ave, NE Seattle, 98105</p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">

@@ -97,7 +97,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden border-t border-gray-200 py-4">
+            <div className="md:hidden border-t border-gray-200 py-4 bg-white">
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   item.id === 'order-online' ? (
@@ -106,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
                     href="https://managerspizza.hungerrush.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`text-left text-sm font-medium transition-colors duration-200 ${
+                      className={`text-left text-sm font-medium transition-colors duration-200 pl-[10px] ${
                         activeSection === item.id
                           ? 'text-red-600'
                           : 'text-gray-700 hover:text-red-600'
@@ -122,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
                         onSectionChange(item.id);
                         setIsMobileMenuOpen(false);
                       }}
-                      className={`text-left text-sm font-medium transition-colors duration-200 ${
+                      className={`text-left text-sm font-medium transition-colors duration-200 pl-[10px] ${
                         activeSection === item.id
                           ? 'text-red-600'
                           : 'text-gray-700 hover:text-red-600'
@@ -141,7 +141,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />
-                  <span>University District, Seattle</span>
+                  <span>4741 12th Ave, NE Seattle, 98105</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4" />

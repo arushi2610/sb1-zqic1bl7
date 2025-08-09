@@ -151,8 +151,13 @@ const MenuSection: React.FC = () => {
                       )}
                       {item.category === 'Wings' && item.flavors && item.flavors.length > 0 && (
                         <button
-                          className="ml-2 px-4 py-2 text-sm font-bold bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-full shadow-lg border border-yellow-500 hover:from-yellow-500 hover:to-orange-600 hover:scale-105 transition-all duration-200 relative z-30 focus:outline-none focus:ring-2 focus:ring-yellow-300"
-                          style={{ position: 'relative' }}
+                          className="ml-2 px-4 py-2 text-sm font-bold border-2 rounded-full shadow-lg transition-all duration-200 relative z-30 focus:outline-none focus:ring-2"
+                          style={{
+                            position: 'relative',
+                            borderColor: '#f59e42', // orange-400
+                            color: '#f59e42', // orange-400
+                            background: '#fff',
+                          }}
                           onClick={() => setShowWingsFlavors({ open: true, itemName: item.name })}
                           aria-label={`Show flavors for ${item.name}`}
                         >
