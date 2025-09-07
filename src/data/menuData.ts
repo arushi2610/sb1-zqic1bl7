@@ -38,7 +38,7 @@ export const menuData: MenuItem[] = [
     name: 'Butter Chicken Pizza',
     description: 'Marinated chicken, Mushrooms, red onions, diced tomatoes, fresh green onions, and cilantro with homemade sauce.',
     category: "Manager's Picks",
-    image: 'https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Manager_sPizza_ButterChickenPizza.jpg',
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
@@ -53,7 +53,7 @@ export const menuData: MenuItem[] = [
     name: 'Chicken Tikka Masala Pizza',
     description: 'Marinated chicken, red onions, bell peppers, Ginger, Garlic, tomatoes, fresh green onions, and Cilantro on homemade sauce.',
     category: "Manager's Picks",
-    image: 'https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Manager_sPizza_ChickenTikkaMasalaPizza.jpg',
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
@@ -162,7 +162,7 @@ export const menuData: MenuItem[] = [
     name: 'Masala Supreme Feast',
     description: 'Tandoori Chicken, Chicken Tikka, Butter Chicken, BBQ Chicken, Onions, and Bell Peppers on Red Sauce. ',
     category: "Manager's Picks",
-    image: 'https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Manager_sPizza_MasalaSupremeFeastPizza.jpg',
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
@@ -174,10 +174,10 @@ export const menuData: MenuItem[] = [
   },
 
   // 🍕 Signature Pizzas
-  { id: 'veggie-supreme', name: 'Veggie Supreme', description: 'Mushrooms, black olives, bell peppers, red onions, and fresh sliced tomatoes on red sauce. ', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'veggie-supreme', name: 'Veggie Supreme', description: 'Mushrooms, black olives, bell peppers, red onions, and fresh sliced tomatoes on red sauce. ', category: 'Signature Pizzas', price: 18.99, image: '/Manager_sPizza_VeggieSupremePizza.jpg' },
   { id: 'supreme-feast', name: 'Supreme Feast', description: 'Salami, pepperoni, sausage, ground beef, mushrooms, black olives, bell pepper, and red onions on red sauce. ', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'white-delight', name: 'White Delight', description: 'Spinach, Mushrooms, Tomatoes , red onions, Artichoke hearts and fresh green onions on creamy garlic sauce. ', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'garlic-ranch-feast', name: 'Garlic Ranch Feast', description: 'Pepperoni, sausage, mushrooms, tomatoes, black olives, and fresh green onions on creamy garlic sauce. ', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'white-delight', name: 'White Delight', description: 'Spinach, Mushrooms, Tomatoes , red onions, Artichoke hearts and fresh green onions on creamy garlic sauce. ', category: 'Signature Pizzas', price: 18.99, image: '/Manager_sPizza_WhiteDelightPizza.jpg' },
+  { id: 'garlic-ranch-feast', name: 'Garlic Ranch Feast', description: 'Pepperoni, sausage, mushrooms, tomatoes, black olives, and fresh green onions on creamy garlic sauce. ', category: 'Signature Pizzas', price: 18.99, image: '/Manager_sPizza_GarlicRanchFeastPizza.jpg' },
   {
     id: 'custom-pizza',
     name: 'Build Your Own Pizza',
@@ -199,17 +199,17 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     dietary: [],
   },
-  { id: 'the-hamazon', name: 'The Hamazon', description: 'Ham, pineapple, tomatoes, red onions, bacon, and fresh green onions on our sweet & Spicy Sauce .', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'ham-it-up', name: 'Ham It Up', description: 'Ham and Pineapple on Red Sauce.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'meaty-union', name: 'Meaty Union', description: 'Ham, Salami, Pepperoni, sausage, and ground beef on Red Sauce. ', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'pizza-margherita', name: 'Pizza Margherita', description: 'Baby tomatoes and fresh basil leaves on Red Sauce. ', category: 'Signature Pizzas', dietary: ['V'], price: 18.99, image: 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'garlic-rooster', name: 'Garlic Rooster', description: 'Grilled Chicken, Mushrooms, Tomatoes, Red onions and fresh green onions on creamy garlic sauce.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'tangy-bbq', name: 'Tangy BBQ', description: 'BBQ chicken, bacon, and pineapple on tangy BBQ sauce.', category: 'Signature Pizzas', price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'mediterranean', name: 'Mediterranean', description: 'Chicken, artichoke hearts, olives, and sundried tomatoes, and feta cheese on pesto sauce. ', category: 'Signature Pizzas', dietary: ['V'], price: 18.99, image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'the-hamazon', name: 'The Hamazon', description: 'Ham, pineapple, tomatoes, red onions, bacon, and fresh green onions on our sweet & Spicy Sauce .', category: 'Signature Pizzas', price: 18.99, image: '/Manager_sPizza_TheHamazonPizza.jpg' },
+  { id: 'ham-it-up', name: 'Ham It Up', description: 'Ham and Pineapple on Red Sauce.', category: 'Signature Pizzas', price: 18.99, image: '/Manager_sPizza_HamItUpPizza.jpg' },
+  { id: 'meaty-union', name: 'Meaty Union', description: 'Ham, Salami, Pepperoni, sausage, and ground beef on Red Sauce. ', category: 'Signature Pizzas', price: 18.99, image: '/Manager_sPizza_MeatyUnionPizza.jpg' },
+  { id: 'pizza-margherita', name: 'Pizza Margherita', description: 'Baby tomatoes and fresh basil leaves on Red Sauce. ', category: 'Signature Pizzas', dietary: ['V'], price: 18.99, image: '/Manager_sPizza_MargheritaPizza.jpg' },
+  { id: 'garlic-rooster', name: 'Garlic Rooster', description: 'Grilled Chicken, Mushrooms, Tomatoes, Red onions and fresh green onions on creamy garlic sauce.', category: 'Signature Pizzas', price: 18.99, image: '/Manager_sPizza_GarlicRoosterPizza.jpg' },
+  { id: 'tangy-bbq', name: 'Tangy BBQ', description: 'BBQ chicken, bacon, and pineapple on tangy BBQ sauce.', category: 'Signature Pizzas', price: 18.99, image: '/Manager_sPizza_TangyBBQPizza.jpg' },
+  { id: 'mediterranean', name: 'Mediterranean', description: 'Chicken, artichoke hearts, olives, and sundried tomatoes, and feta cheese on pesto sauce. ', category: 'Signature Pizzas', dietary: ['V'], price: 18.99, image: '/Manager_sPizza_MediterraneanPizza.jpg' },
 
   // 🍕 Classic Pizzas
-  { id: 'classic-pepperoni', name: 'Classic Pepperoni', description: 'Our hand-tossed crust topped with rich tomato sauce, whole milk-mozzarella and crispy pepperoni. ', category: 'Classic Pizzas', price: 15.99, image: 'https://images.pexels.com/photos/3762034/pexels-photo-3762034.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'classic-cheese', name: 'Classic Cheese', description: 'Our hand-tossed crust topped with rich tomato sauce and whole milk-mozzarella.', category: 'Classic Pizzas', dietary: ['V'], price: 13.99, image: 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'classic-pepperoni', name: 'Classic Pepperoni', description: 'Our hand-tossed crust topped with rich tomato sauce, whole milk-mozzarella and crispy pepperoni. ', category: 'Classic Pizzas', price: 15.99, image: '/Manager_sPizza_PepperoniPizza.jpg' },
+  { id: 'classic-cheese', name: 'Classic Cheese', description: 'Our hand-tossed crust topped with rich tomato sauce and whole milk-mozzarella.', category: 'Classic Pizzas', dietary: ['V'], price: 13.99, image: '/Manager_sPizza_CheesePizza.jpg' },
 
   // Build Your Own Pizza (removed duplicate)
 
@@ -224,7 +224,7 @@ export const menuData: MenuItem[] = [
   { id: 'garlic-sticks', name: 'Garlic Sticks with Cheese', description: 'Soft breadsticks brushed with garlic butter and topped with mozzarella cheese.', category: 'Starters & Sides', dietary: ['V'], price: 6.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'pesto-sticks', name: 'Pesto Sticks', description: 'Soft breadsticks topped with aromatic pesto sauce and mozzarella cheese.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'masala-breadsticks', name: 'Masala Breadsticks', description: 'Crispy breadsticks seasoned with a flavorful blend of Indian spices.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'mozzarella-sticks', name: 'Mozzarella Sticks (8 pcs)', description: 'Crispy golden sticks filled with melted mozzarella cheese with the choice of dipping ranch or marinara.', category: 'Starters & Sides', dietary: ['V'], price: 9.99, image: 'https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'mozzarella-sticks', name: 'Mozzarella Sticks (8 pcs)', description: 'Crispy golden sticks filled with melted mozzarella cheese with the choice of dipping ranch or marinara.', category: 'Starters & Sides', dietary: ['V'], price: 9.99, image: '/Manager_sPizza_MozzerallaSticks.jpg' },
   { id: 'jalapeno-poppers', name: 'Jalapeño Poppers (8 pcs)', description: 'Crispy fried jalapeños stuffed with creamy cheese with the choice of dipping ranch or blue cheese.', category: 'Starters & Sides', dietary: ['V'], price: 8.99, image: 'https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'cauliflower-crisps', name: 'Cauliflower Crisps', description: 'Light and crunchy bites made from seasoned cauliflower.A tasty wholesome snack.', category: 'Starters & Sides', dietary: ['V'], price: 8.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'vegan-nuggets', name: 'Vegan Nuggets', description: 'Crispy,golden nuggets made from plant-based ingredients. Totally meat free.', category: 'Starters & Sides', dietary: ['VE'], price: 8.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800' },
@@ -252,7 +252,7 @@ export const menuData: MenuItem[] = [
   { id: 'sub-spicy-chicken', name: 'Spicy Chicken Sub', description: '- A juicy,spicy crispy chicken breast served on a fresh sandwich roll with lettuce, onions,tomato,pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-buffalo-chicken', name: 'Buffalo Chicken Sub', description: 'Sandwich-A juicy, crispy buffalo chicken breast served on a fresh sandwich roll with lettuce, onions, tomato,pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-crispy-chicken', name: 'Crispy Chicken Sub', description: 'A juicy, crispy chicken breast served on a fresh sandwich roll with lettuce, onions, tomato, pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'sub-bbq-chicken', name: 'BBQ Chicken Sub', description: 'A juicy, grilled BBQ chicken served on a fresh sandwich roll with lettuce, onion, tomato, pickles and special sauce. ', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'sub-bbq-chicken', name: 'BBQ Chicken Sub', description: 'A juicy, grilled BBQ chicken served on a fresh sandwich roll with lettuce, onion, tomato, pickles and special sauce. ', category: 'Subs & Sandwiches', price: 11.99, image: '/Manager_sPizza_BBQChickenSandwich.jpg' },
   { id: 'sub-chicken-parmesan', name: 'Chicken Parmesan Sub', description: 'A crispy fried chicken breast topped with marinara sauce and melted mozzarella served on a fresh sandwich roll.', category: 'Subs & Sandwiches', price: 12.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-teriyaki-chicken', name: 'Teriyaki Chicken Sub', description: 'A juicy grilled teriyaki chicken served on a fresh sandwich roll with lettuce, onion, tomatoes and pickles.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-tandoori-chicken', name: 'Tandoori Paneer/Chicken Sandwich', description: 'A flavorful tandoori-spiced based sandwich with your choice of chicken or paneer ,served on a fresh sandwich roll with lettuce, onions, tomato and pickles.', category: 'Subs & Sandwiches', price: 12.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
@@ -260,7 +260,7 @@ export const menuData: MenuItem[] = [
 
   // 🍰 Desserts
   { id: 'mini-churros', name: 'Mini Churros', description: '16 mini churros coated in Cinnamon sugar.', category: 'Desserts', dietary: ['V'], price: 6.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'nutella-pizza', name: 'Nutella Pizza (10")', description: 'Golden-baked dough layered with warm Nutella, and topped with a sprinkle of powdered sugar.', category: 'Desserts', dietary: ['V'], price: 10.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'nutella-pizza', name: 'Nutella Pizza (10")', description: 'Golden-baked dough layered with warm Nutella, and topped with a sprinkle of powdered sugar.', category: 'Desserts', dietary: ['V'], price: 10.99, image: '/Manager_sPizza_NutellaPizza.jpg' },
   { id: 'cinnamon-dessert-pizza', name: 'Cinnamon Dessert Pizza (10")', description: 'A warm, soft pizza crust topped with buttery cinnamon sugar.', category: 'Desserts', dietary: ['V'], price: 9.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'tiramisu', name: 'Tiramisu', description: 'A rich creamy Italian dessert with coffee, cream and cocoa.', category: 'Desserts', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'cheesecake-slice', name: 'Cheesecake Slice', description: 'Rich and velvety cheesecake slice with a buttery base.', category: 'Desserts', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
