@@ -28,14 +28,24 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div 
+            <div
               className="flex items-center space-x-2 cursor-pointer"
               onClick={() => onSectionChange('home')}
+              style={{ minWidth: 64 }}
             >
-              <img 
-                src="MP-whitelogo.jpg" 
-                alt="Manager's Pizza Logo" 
-                className="h-12 w-auto"
+              <img
+              src="/PHOTO-2025-06-13-09-00-06.jpg"
+              alt="Manager's Pizza Logo"
+              className="h-16 w-32 object-contain"
+              width={64}
+              height={64}
+              loading="eager"
+              decoding="async"
+              onError={(e) => {
+                const t = e.currentTarget as HTMLImageElement;
+                t.onerror = null;
+                t.src = '/images/placeholder.png';
+              }}
               />
             </div>
 
@@ -80,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               </div>
               <div className="flex items-center space-x-1">
                 <Clock className="h-4 w-4" />
-                <span>Open 9am - 10pm EVERY DAY</span>
+                <span>Open 10am - 11pm EVERY DAY</span>
               </div>
             </div>
 
@@ -145,7 +155,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4" />
-                  <span>Open 9am - 10pm EVERY DAY</span>
+                  <span>Open 10am - 11pm EVERY DAY</span>
                 </div>
               </div>
             </div>

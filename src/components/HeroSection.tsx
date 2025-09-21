@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <div className="flex justify-center mb-0">
-          <img src="/removebg-pizzalogo.png" alt="Manager's Pizza Logo" className="h-52 md:h-72 w-auto" />
+          <img src="/MP-main-pizza-logo.png" alt="Manager's Pizza Logo" className="h-52 md:h-72 w-auto" />
         </div>
         
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             <h3 className="text-lg font-semibold mb-2">Hours</h3>
-            <p className="text-gray-200">Daily<br />9am - 10pm</p>
+            <p className="text-gray-200">Daily<br />10am - 11pm</p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">

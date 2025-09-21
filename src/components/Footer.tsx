@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center space-x-2 -mt-[50px] mb-2">
               <img 
-                src="/removebg-pizzalogo.png" 
+                src="/MP-main-pizza-logo.png" 
                 alt="Manager's Pizza Logo" 
                 className="h-24 md:h-32 w-auto"
               />
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
             <div className="space-y-2 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
                 <Clock className="h-4 w-4 text-red-400" />
-                <span>9am - 10pm EVERY DAY</span>
+                <span>Open 10am - 11pm EVERY DAY</span>
               </div>
             </div>
           </div>
