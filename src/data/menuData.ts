@@ -268,10 +268,7 @@ export const menuData: MenuItem[] = [
 ];
 
 export const categories = [
-  "Manager's Picks",
-  'Signature Pizzas',
-  'Classic Pizzas',
-  'Build Your Own Pizza',
+  'Pizzas',
   'Wings',
   'Starters & Sides',
   'Mac n’ Cheese',

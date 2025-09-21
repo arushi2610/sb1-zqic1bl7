@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
+import CouponSection from './components/CouponSection';
 import HeroSection from './components/HeroSection';
 import MenuSection from './components/MenuSection';
 import AboutSection from './components/AboutSection';
@@ -51,6 +52,7 @@ export default function App() {
       />
       <section id="home">
         <HeroSection />
+        <CouponSection />
       </section>
       <section id="menu">
         <MenuSection />

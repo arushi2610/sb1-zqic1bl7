@@ -1,17 +1,47 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowRight, MapPin, Phone, Clock } from 'lucide-react';
+
+const HERO_IMG_OPTIMIZED = '/images/optimized/Manager_sPizza_Hero-1024.webp';
+const HERO_IMG_FALLBACK = '/Manager_sPizza_Hero.jpg';
 
 const HeroSection: React.FC = () => {
   const handleOrderNow = () => {
     window.location.href = 'https://managerspizza.hungerrush.com/Order/OrderType';
   };
+
+  const bgRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // Load the large hero image during idle time to avoid blocking first paint.
+    const loadHero = () => {
+      const img = new Image();
+      img.src = HERO_IMG_OPTIMIZED;
+      img.onload = () => {
+        if (bgRef.current) {
+          bgRef.current.style.backgroundImage = `url('${HERO_IMG_OPTIMIZED}')`;
+        }
+      };
+      img.onerror = () => {
+        const img2 = new Image();
+        img2.src = HERO_IMG_FALLBACK;
+        img2.onload = () => {
+          if (bgRef.current) bgRef.current.style.backgroundImage = `url('${HERO_IMG_FALLBACK}')`;
+        };
+      };
+    };
+
+    // Immediate load of optimized hero to improve LCP — optimized WebP is much smaller.
+    loadHero();
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
+      {/* Background placeholder (gradient) — replaced with real image after it's loaded */}
+      <div
+        ref={bgRef}
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundImage: 'linear-gradient(180deg, rgba(20,20,20,0.85), rgba(10,10,10,0.7))',
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -20,7 +50,7 @@ const HeroSection: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <div className="flex justify-center mb-0">
-          <img src="/MP-main-pizza-logo.png" alt="Manager's Pizza Logo" className="h-52 md:h-72 w-auto" />
+          <img src="/MP-main-pizza-logo.png" alt="Manager's Pizza Logo" className="h-52 md:h-72 w-auto" width={288} height={288} />
         </div>
         
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">

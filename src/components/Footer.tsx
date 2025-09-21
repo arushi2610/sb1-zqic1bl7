@@ -9,10 +9,19 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 -mt-[50px] mb-2">
-              <img 
-                src="/MP-main-pizza-logo.png" 
-                alt="Manager's Pizza Logo" 
+              <img
+                src="/MP-main-pizza-logo.png"
+                alt="Manager's Pizza Logo"
                 className="h-24 md:h-32 w-auto"
+                width={160}
+                height={120}
+                loading="lazy"
+                decoding="async"
+                onError={(e) => {
+                  const t = e.currentTarget;
+                  t.onerror = null;
+                  t.src = '/images/placeholder.png';
+                }}
               />
             </div>
           </div>

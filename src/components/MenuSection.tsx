@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { menuData } from '../data/menuData';
+import { menuData, categories as mainTabs } from '../data/menuData';
 import { MenuItem } from '../types';
 
 const MenuSection: React.FC = () => {
   const pizzaCategories = ["Manager's Picks", "Signature Pizzas", "Classic Pizzas", "Build Your Own Pizza"];
-  const [activeCategory, setActiveCategory] = useState("Manager's Picks");
-  const [activePizzaCategory, setActivePizzaCategory] = useState(pizzaCategories[0]);
+  const [activeCategory, setActiveCategory] = useState<string>(mainTabs[0] || 'Pizzas');
+  // Sub-tab for pizzas
+  const [activePizzaCategory, setActivePizzaCategory] = useState<string>(pizzaCategories[0]);
   const [showBuildInfo, setShowBuildInfo] = useState(false);
-  const buildInfoText = `Crust: Skinny, Regular.\nSauce: Red Sauce, Creamy Garlic Sauce, Sweet & Chili Sauce, BBQ Sauce, Pesto sauce.\nCheese: 100% Whole Milk Mozzarella Cheese.\nMeats: Ham, Pepperoni, Salami, Italian Sausage, Ground Beef, Bacon, Chicken (Grilled, BBQ, Marinated).\nVeggies: Spinach, Mushroom, Red Onion, Bell Pepper, Tomato, Garlic, Jalapeño, Olive, Pineapple, Artichoke Hearts, Green Onion, Cilantro, Basil, Sun-Dried Tomato, Fresh tomato, Green Chili, Marinated Paneer.`;
   const [showWingsFlavors, setShowWingsFlavors] = useState<{ open: boolean; itemName: string | null }>({ open: false, itemName: null });
 
   // For Salads, extract all unique sizes/prices from items (for the active category only)
@@ -22,35 +22,16 @@ const MenuSection: React.FC = () => {
           Sizes: {uniqueSizes.map((size) => `${size.name} ($${size.price.toFixed(2)})`).join(' | ')}
         </div>
       );
-    } else if (uniqueSizes.length === 1) {
-      saladSizesLine = (
-        <div className="text-sm font-semibold text-red-600 mb-4 text-center">
-          Price: ${uniqueSizes[0].price.toFixed(2)}
-        </div>
-      );
     }
   }
-
-
-  // Define new main categories (tabs)
-  const mainTabs = [
-    'Pizzas',
-    'Wings',
-    'Starters & Sides',
-    'Mac n’ Cheese',
-    'Salads',
-    'Subs & Sandwiches',
-    'Desserts',
-  ];
-
-  // For each tab, filter items accordingly
   let tabSections: { section: string, items: MenuItem[] }[] = [];
   if (activeCategory === 'Pizzas') {
+    // Show only the currently selected pizza subcategory (sub-tabs control this)
     tabSections = [
       {
         section: activePizzaCategory,
-        items: menuData.filter(item => item.category === activePizzaCategory)
-      }
+        items: menuData.filter((item) => item.category === activePizzaCategory),
+      },
     ];
   } else {
     // Map tab names to menuData category names for special cases
@@ -86,7 +67,6 @@ const MenuSection: React.FC = () => {
                 key={tab}
                 onClick={() => {
                   setActiveCategory(tab);
-                  if (tab === 'Pizzas') setActivePizzaCategory(pizzaCategories[0]);
                 }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeCategory === tab
@@ -98,7 +78,7 @@ const MenuSection: React.FC = () => {
               </button>
             ))}
           </div>
-          {/* Pizza sub-tabs */}
+          {/* Note: when `Pizzas` is selected show pizza sub-tabs (pills) to choose a pizza subsection */}
           {activeCategory === 'Pizzas' && (
             <div className="flex flex-wrap justify-center gap-2 md:gap-4 mt-6">
               {pizzaCategories.map((cat) => (

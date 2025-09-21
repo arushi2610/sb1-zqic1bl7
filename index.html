@@ -2,9 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/PHOTO-2025-06-13-09-00-06 (1).jpg" />
+    <!-- Use a small optimized favicon (add public/favicon.ico to the repo) -->
+    <link rel="icon" href="/favicon.ico" />
+    <!-- preload the app entry for faster startup (modulepreload for module graph) -->
+    <link rel="modulepreload" href="/src/main.tsx" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manager&#39;s Pizza Restaurant Website</title>
+    <!-- Preconnect fonts and preload critical logo/hero -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/MP-main-pizza-logo.png" />
   </head>
   <body>
     <div id="root"></div>
