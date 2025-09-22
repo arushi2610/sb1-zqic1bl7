@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pizza, Menu, X, ShoppingCart, Phone, MapPin, Clock } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
 
 interface HeaderProps {
   activeSection: string;

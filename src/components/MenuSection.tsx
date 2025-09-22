@@ -59,7 +59,7 @@ const MenuSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Navigation */}
+  {/* Category Navigation */}
         <div className="mb-12">
           <div className="flex flex-wrap justify-center gap-2 md:gap-4">
             {mainTabs.map((tab) => (
@@ -102,6 +102,7 @@ const MenuSection: React.FC = () => {
             </div>
           )}
         </div>
+  {saladSizesLine}
         {/* Render sections for the active tab */}
         {tabSections.map(({ section, items }) => (
           <div key={section} className="mb-12">
@@ -115,6 +116,10 @@ const MenuSection: React.FC = () => {
                     src={item.image}
                     alt={item.name}
                     className="w-full h-48 object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
+                    width={400}
+                    height={240}
                   />
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-2">

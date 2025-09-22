@@ -8,9 +8,12 @@
     <link rel="modulepreload" href="/src/main.tsx" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manager&#39;s Pizza Restaurant Website</title>
-    <!-- Preconnect fonts and preload critical logo/hero -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="/MP-main-pizza-logo.png" />
+  <!-- Preconnect fonts and preload critical logo/hero -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload LCP hero image (optimized WebP) to improve Largest Contentful Paint -->
+  <link rel="preload" as="image" href="/images/optimized/Manager_sPizza_Hero-1024.webp" />
+  <!-- Preload the logo too (small) -->
+  <link rel="preload" as="image" href="/MP-main-pizza-logo.png" />
   </head>
   <body>
     <div id="root"></div>

@@ -1,29 +1,8 @@
 import React from 'react';
-import { ExternalLink, Clock, Star, Truck } from 'lucide-react';
+import { Clock, Star, Truck } from 'lucide-react';
 
 const OrderOnlineSection: React.FC = () => {
-  const deliveryPlatforms = [
-    {
-      name: 'DoorDash',
-      logo: 'https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=400',
-      url: '#',
-      deliveryTime: '25-40 min',
-      deliveryFee: '$2.99',
-      rating: '4.8',
-      description: 'Fast delivery with real-time tracking',
-      color: 'bg-red-500 hover:bg-red-600'
-    },
-    {
-      name: 'Uber Eats',
-      logo: 'https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=400',
-      url: '#',
-      deliveryTime: '20-35 min',
-      deliveryFee: '$1.99',
-      rating: '4.7',
-      description: 'Quick and reliable food delivery',
-      color: 'bg-black hover:bg-gray-800'
-    }
-  ];
+  // Delivery platforms listing removed to reduce unused variables; keep static Order Online button above.
 
   return (
     <section id="order-online" className="py-20 bg-gray-50">

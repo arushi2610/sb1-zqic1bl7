@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Header from './components/Header';
 import CouponSection from './components/CouponSection';
 import HeroSection from './components/HeroSection';
-import MenuSection from './components/MenuSection';
+const MenuSection = React.lazy(() => import('./components/MenuSection'));
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import OrderOnlineSection from './components/OrderOnlineSection';
@@ -12,10 +12,12 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'menu', 'about', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+    // Throttle scroll updates with rAF and use a passive listener to avoid blocking scrolling.
+    let ticking = false;
+    const sections = ['home', 'menu', 'about', 'contact'];
 
+    const update = () => {
+      const scrollPosition = window.scrollY + 100;
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -26,9 +28,15 @@ export default function App() {
           }
         }
       }
+      ticking = false;
     };
-
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -55,7 +63,9 @@ export default function App() {
         <CouponSection />
       </section>
       <section id="menu">
-        <MenuSection />
+        <Suspense fallback={<div className="py-20">Loading menu…</div>}>
+          <MenuSection />
+        </Suspense>
       </section>
       <section id="about">
         <AboutSection />

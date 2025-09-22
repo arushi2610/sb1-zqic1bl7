@@ -38,7 +38,7 @@ export const menuData: MenuItem[] = [
     name: 'Butter Chicken Pizza',
     description: 'Marinated chicken, Mushrooms, red onions, diced tomatoes, fresh green onions, and cilantro with homemade sauce.',
     category: "Manager's Picks",
-    image: '/Manager_sPizza_ButterChickenPizza.jpg',
+    image: '/ButterChickenPizza.jpg',
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
@@ -252,7 +252,7 @@ export const menuData: MenuItem[] = [
   { id: 'sub-spicy-chicken', name: 'Spicy Chicken Sub', description: '- A juicy,spicy crispy chicken breast served on a fresh sandwich roll with lettuce, onions,tomato,pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-buffalo-chicken', name: 'Buffalo Chicken Sub', description: 'Sandwich-A juicy, crispy buffalo chicken breast served on a fresh sandwich roll with lettuce, onions, tomato,pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-crispy-chicken', name: 'Crispy Chicken Sub', description: 'A juicy, crispy chicken breast served on a fresh sandwich roll with lettuce, onions, tomato, pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'sub-bbq-chicken', name: 'BBQ Chicken Sub', description: 'A juicy, grilled BBQ chicken served on a fresh sandwich roll with lettuce, onion, tomato, pickles and special sauce. ', category: 'Subs & Sandwiches', price: 11.99, image: '/Manager_sPizza_BBQChickenSandwich.jpg' },
+  { id: 'sub-bbq-chicken', name: 'BBQ Chicken Sub', description: 'A juicy, grilled BBQ chicken served on a fresh sandwich roll with lettuce, onion, tomato, pickles and special sauce. ', category: 'Subs & Sandwiches', price: 11.99, image: '/BBQChickenSandwich.jpg' },
   { id: 'sub-chicken-parmesan', name: 'Chicken Parmesan Sub', description: 'A crispy fried chicken breast topped with marinara sauce and melted mozzarella served on a fresh sandwich roll.', category: 'Subs & Sandwiches', price: 12.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-teriyaki-chicken', name: 'Teriyaki Chicken Sub', description: 'A juicy grilled teriyaki chicken served on a fresh sandwich roll with lettuce, onion, tomatoes and pickles.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-tandoori-chicken', name: 'Tandoori Paneer/Chicken Sandwich', description: 'A flavorful tandoori-spiced based sandwich with your choice of chicken or paneer ,served on a fresh sandwich roll with lettuce, onions, tomato and pickles.', category: 'Subs & Sandwiches', price: 12.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },

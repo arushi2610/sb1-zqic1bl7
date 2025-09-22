@@ -50,7 +50,15 @@ const HeroSection: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <div className="flex justify-center mb-0">
-          <img src="/MP-main-pizza-logo.png" alt="Manager's Pizza Logo" className="h-52 md:h-72 w-auto" width={288} height={288} />
+          <img
+            src="/MP-main-pizza-logo.png"
+            alt="Manager's Pizza Logo"
+            className="h-52 md:h-72 w-auto"
+            width={288}
+            height={288}
+            decoding="async"
+            fetchPriority="high"
+          />
         </div>
         
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
