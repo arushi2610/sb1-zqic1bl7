@@ -24,7 +24,7 @@ const CouponSection: React.FC = () => {
 
             <div className="bg-white border rounded-lg p-3 shadow-sm min-w-0">
               <div className="text-sm font-semibold text-gray-700">Buy 2 large specialty pizzas</div>
-              <div className="text-2xl md:text-3xl font-bold text-red-600">Get ANY Large Pizza FREE</div>
+                <div className="text-lg md:text-xl font-bold text-red-600">Get ANY Large Pizza FREE</div>
               <div className="text-xs text-gray-500 mt-1">Applied to the cheapest eligible large pizza in the cart.</div>
             </div>
           </div>
