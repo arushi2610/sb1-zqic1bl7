@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { menuData, categories as mainTabs } from '../data/menuData';
 import { MenuItem } from '../types';
+import { trackMenuInteraction } from '../utils/analytics';
 
 const MenuSection: React.FC = () => {
   const pizzaCategories = ["Manager's Picks", "Signature Pizzas", "Classic Pizzas", "Build Your Own Pizza"];
@@ -67,6 +68,7 @@ const MenuSection: React.FC = () => {
                 key={tab}
                 onClick={() => {
                   setActiveCategory(tab);
+                  trackMenuInteraction('category_select', tab);
                 }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeCategory === tab
@@ -84,7 +86,10 @@ const MenuSection: React.FC = () => {
               {pizzaCategories.map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setActivePizzaCategory(cat)}
+                  onClick={() => {
+                    setActivePizzaCategory(cat);
+                    trackMenuInteraction('pizza_subcategory_select', cat);
+                  }}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     activePizzaCategory === cat
                       ? 'bg-red-600 text-white shadow-lg'

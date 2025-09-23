@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackCouponView } from '../utils/analytics';
 
 const CouponSection: React.FC = () => {
   return (
@@ -16,15 +17,21 @@ const CouponSection: React.FC = () => {
           <p className="text-sm text-gray-600 mt-1">Save today with our move-in special and pizza bundle offer. Offer expires Oct 16.</p>
 
           <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="bg-white border rounded-lg p-3 shadow-sm min-w-0">
+            <div 
+              className="bg-white border rounded-lg p-3 shadow-sm min-w-0 cursor-pointer hover:shadow-md transition-shadow"
+              onClick={() => trackCouponView('STUDENT20')}
+            >
               <div className="text-sm font-semibold text-gray-700">Students move-in special</div>
               <div className="text-2xl md:text-3xl font-bold text-red-600">20% OFF</div>
               <div className="text-xs text-gray-500 mt-1">Show your Student ID to get the discount!</div>
             </div>
 
-            <div className="bg-white border rounded-lg p-3 shadow-sm min-w-0">
+            <div 
+              className="bg-white border rounded-lg p-3 shadow-sm min-w-0 cursor-pointer hover:shadow-md transition-shadow"
+              onClick={() => trackCouponView('B2G1LARGE')}
+            >
               <div className="text-sm font-semibold text-gray-700">Buy 2 large specialty pizzas</div>
-                <div className="text-lg md:text-xl font-bold text-red-600">Get ANY Large Pizza FREE</div>
+              <div className="text-2xl md:text-3xl font-bold text-red-600">Get ANY Large Pizza FREE</div>
               <div className="text-xs text-gray-500 mt-1">Applied to the cheapest eligible large pizza in the cart.</div>
             </div>
           </div>

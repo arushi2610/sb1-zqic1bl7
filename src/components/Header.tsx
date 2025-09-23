@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
+import { trackContactInteraction } from '../utils/analytics';
 
 interface HeaderProps {
   activeSection: string;
@@ -86,7 +87,13 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
             <div className="hidden lg:flex items-center space-x-4 text-sm text-gray-600">
               <div className="flex items-center space-x-1">
                 <Phone className="h-4 w-4" />
-                <span>(206) 413-5548</span>
+                <a 
+                  href="tel:+12064135548"
+                  onClick={() => trackContactInteraction('phone')}
+                  className="hover:text-red-600 transition-colors"
+                >
+                  (206) 413-5548
+                </a>
               </div>
               <div className="flex items-center space-x-1">
                 <Clock className="h-4 w-4" />
@@ -147,7 +154,13 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               <div className="mt-4 pt-4 border-t border-gray-200 space-y-2 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
-                  <span>(206) 413-5548</span>
+                  <a 
+                    href="tel:+12064135548"
+                    onClick={() => trackContactInteraction('phone')}
+                    className="hover:text-red-600 transition-colors"
+                  >
+                    (206) 413-5548
+                  </a>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />

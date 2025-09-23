@@ -6,6 +6,14 @@ const HERO_IMG_FALLBACK = '/Manager_sPizza_Hero.jpg';
 
 const HeroSection: React.FC = () => {
   const handleOrderNow = () => {
+    // Track order button click in Google Analytics
+    if (typeof (window as any).gtag !== 'undefined') {
+      (window as any).gtag('event', 'click', {
+        event_category: 'Order',
+        event_label: 'Hero Section Order Now',
+        value: 1
+      });
+    }
     window.location.href = 'https://managerspizza.hungerrush.com/Order/OrderType';
   };
 
@@ -49,10 +57,10 @@ const HeroSection: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <div className="flex justify-center mb-0">
+        <div className="flex justify-center mb-6">
           <img
             src="/MP-main-pizza-logo.png"
-            alt="Manager's Pizza Logo"
+            alt="Manager's Pizza - Authentic Indian & Classic Pizzas Restaurant Logo"
             className="h-52 md:h-72 w-auto"
             width={288}
             height={288}
@@ -61,9 +69,13 @@ const HeroSection: React.FC = () => {
           />
         </div>
         
-        <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-          Fresh dough, bold fusion, and handcrafted flavors in Seattle’s U District
-        </p>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+          Manager's Pizza
+        </h1>
+        
+        <h2 className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed font-medium">
+          Fresh dough, bold fusion, and handcrafted flavors in Seattle's U District
+        </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <button
@@ -74,6 +86,7 @@ const HeroSection: React.FC = () => {
             <ArrowRight className="h-5 w-5" />
           </button>
         </div>
+        
         {/* Quick Info Cards */}
         <div className="grid md:grid-cols-3 gap-6 mt-16">
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">

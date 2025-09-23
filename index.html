@@ -7,7 +7,152 @@
     <!-- preload the app entry for faster startup (modulepreload for module graph) -->
     <link rel="modulepreload" href="/src/main.tsx" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manager&#39;s Pizza Restaurant Website</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Manager's Pizza - Authentic Indian & Classic Pizzas | Order Online</title>
+    <meta name="description" content="Experience the best of both worlds at Manager's Pizza! Authentic Indian-spiced pizzas like Tandoori Chicken & Butter Chicken, plus classic favorites. Fresh ingredients, bold flavors. Order online for delivery & pickup." />
+    <meta name="keywords" content="pizza restaurant, Indian pizza, tandoori chicken pizza, butter chicken pizza, classic pizza, pizza delivery, pizza pickup, fresh pizza, authentic flavors, Manager's Pizza" />
+    <meta name="author" content="Manager's Pizza Restaurant" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content="https://managerspizza.com" />
+    <meta property="og:title" content="Manager's Pizza - Authentic Indian & Classic Pizzas" />
+    <meta property="og:description" content="Experience the best of both worlds at Manager's Pizza! Authentic Indian-spiced pizzas like Tandoori Chicken & Butter Chicken, plus classic favorites. Order online now!" />
+    <meta property="og:image" content="https://managerspizza.com/Manager_sPizza_Hero.jpg" />
+    <meta property="og:image:alt" content="Manager's Pizza - Delicious Indian and classic pizzas" />
+    <meta property="og:site_name" content="Manager's Pizza" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://managerspizza.com" />
+    <meta property="twitter:title" content="Manager's Pizza - Authentic Indian & Classic Pizzas" />
+    <meta property="twitter:description" content="Experience the best of both worlds at Manager's Pizza! Authentic Indian-spiced pizzas like Tandoori Chicken & Butter Chicken, plus classic favorites. Order online now!" />
+    <meta property="twitter:image" content="https://managerspizza.com/Manager_sPizza_Hero.jpg" />
+    <meta property="twitter:image:alt" content="Manager's Pizza - Delicious Indian and classic pizzas" />
+    
+    <!-- Business/Restaurant specific -->
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="Manager's Pizza Restaurant" />
+    <meta name="format-detection" content="telephone=yes" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://managerspizza.com" />
+    
+    <!-- Structured Data - Restaurant Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Manager's Pizza",
+      "image": "https://managerspizza.com/Manager_sPizza_Hero.jpg",
+      "description": "Experience the best of both worlds at Manager's Pizza! Authentic Indian-spiced pizzas like Tandoori Chicken & Butter Chicken, plus classic favorites. Fresh ingredients, bold flavors.",
+      "url": "https://managerspizza.com",
+      "telephone": "+1-XXX-XXX-XXXX",
+      "priceRange": "$",
+      "servesCuisine": ["Pizza", "Indian", "American"],
+      "hasMenu": "https://managerspizza.com/#menu",
+      "acceptsReservations": false,
+      "takeAway": true,
+      "delivery": true,
+      "@id": "https://managerspizza.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday", 
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "11:00",
+        "closes": "22:00"
+      },
+      "menu": {
+        "@type": "Menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Manager's Picks",
+            "description": "Our signature Indian-spiced pizzas"
+          },
+          {
+            "@type": "MenuSection", 
+            "name": "Signature Pizzas",
+            "description": "Unique gourmet pizza creations"
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Classic Pizzas", 
+            "description": "Traditional favorites"
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Wings",
+            "description": "Crispy wings with various flavors"
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Starters & Sides",
+            "description": "Appetizers and side dishes"
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "150"
+      }
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://managerspizza.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Menu",
+          "item": "https://managerspizza.com/#menu"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Order Online",
+          "item": "https://managerspizza.com/#order"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHSDDY9X5L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VHSDDY9X5L');
+    </script>
+    
   <!-- Preconnect fonts and preload critical logo/hero -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Preload LCP hero image (optimized WebP) to improve Largest Contentful Paint -->

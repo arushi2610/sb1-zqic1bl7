@@ -1,5 +1,6 @@
 import React from 'react';
 import { Clock, Star, Truck } from 'lucide-react';
+import { trackOrderRedirect } from '../utils/analytics';
 
 const OrderOnlineSection: React.FC = () => {
   // Delivery platforms listing removed to reduce unused variables; keep static Order Online button above.
@@ -20,6 +21,7 @@ const OrderOnlineSection: React.FC = () => {
             href="https://managerspizza.hungerrush.com/Order/OrderType"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackOrderRedirect('order_online_section')}
             className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
           >
             Order Online
