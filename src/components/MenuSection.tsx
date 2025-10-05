@@ -8,6 +8,9 @@ const MenuSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>(mainTabs[0] || 'Pizzas');
   // Sub-tab for pizzas
   const [activePizzaCategory, setActivePizzaCategory] = useState<string>(pizzaCategories[0]);
+  // Sub-tab for beverages
+  const beverageCategories = ['Cans', '20oz', '2 Liters'];
+  const [activeBeverageCategory, setActiveBeverageCategory] = useState<string>(beverageCategories[0]);
   const [showBuildInfo, setShowBuildInfo] = useState(false);
   const [showWingsFlavors, setShowWingsFlavors] = useState<{ open: boolean; itemName: string | null }>({ open: false, itemName: null });
 
@@ -27,15 +30,20 @@ const MenuSection: React.FC = () => {
   }
   let tabSections: { section: string, items: MenuItem[] }[] = [];
   if (activeCategory === 'Pizzas') {
-    // Show only the currently selected pizza subcategory (sub-tabs control this)
     tabSections = [
       {
         section: activePizzaCategory,
         items: menuData.filter((item) => item.category === activePizzaCategory),
       },
     ];
+  } else if (activeCategory === 'Beverages') {
+    tabSections = [
+      {
+        section: activeBeverageCategory,
+        items: menuData.filter(item => item.category === activeBeverageCategory)
+      }
+    ];
   } else {
-    // Map tab names to menuData category names for special cases
     const categoryMap: Record<string, string> = {
       'Starters and Sides': 'Starters & Sides',
       "Mac n' Cheese": 'Mac n’ Cheese',
@@ -80,7 +88,7 @@ const MenuSection: React.FC = () => {
               </button>
             ))}
           </div>
-          {/* Note: when `Pizzas` is selected show pizza sub-tabs (pills) to choose a pizza subsection */}
+          {/* Pizza sub-tabs */}
           {activeCategory === 'Pizzas' && (
             <div className="flex flex-wrap justify-center gap-2 md:gap-4 mt-6">
               {pizzaCategories.map((cat) => (
@@ -101,6 +109,29 @@ const MenuSection: React.FC = () => {
               ))}
             </div>
           )}
+          {/* Beverage sub-tabs */}
+          {activeCategory === 'Beverages' && (
+            <div className="flex flex-wrap justify-center gap-2 md:gap-4 mt-6">
+              {beverageCategories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => {
+                    setActiveBeverageCategory(cat);
+                    trackMenuInteraction('beverage_subcategory_select', cat);
+                  }}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeBeverageCategory === cat
+                      ? 'bg-red-600 text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-red-50 hover:text-red-600 border border-gray-200'
+                  }`}
+                >
+                  {cat === 'Cans' && 'Cans ($2.50)'}
+                  {cat === '20oz' && '20oz Bottles ($4.50)'}
+                  {cat === '2 Liters' && '2 Liters ($5.50)'}
+                </button>
+              ))}
+            </div>
+          )}
           {activeCategory === 'Salads' && (
             <div className="text-base font-semibold text-red-700 text-center mt-6 mb-2">
               INDIVIDUAL: $8.99, FAMILY: $15.99
@@ -114,58 +145,76 @@ const MenuSection: React.FC = () => {
             {activeCategory === 'Pizzas' && (
               <h3 className="text-3xl font-bold text-gray-900 mb-6 text-left md:text-center">{section}</h3>
             )}
+            {activeCategory === 'Beverages' && (
+              <h3 className="text-3xl font-bold text-gray-900 mb-6 text-left md:text-center">
+                {section === 'Cans' && 'Cans ($2.50)'}
+                {section === '20oz' && '20oz Bottles ($4.50)'}
+                {section === '2 Liters' && '2 Liters ($5.50)'}
+              </h3>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {items.map((item: MenuItem) => (
-                <div key={item.name} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-48 object-cover object-center"
-                    loading="lazy"
-                    decoding="async"
-                    width={400}
-                    height={240}
-                  />
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-bold text-gray-900">{item.name}</h3>
-                      {item.name === 'Build Your Own Pizza' && (
-                        <button
-                          className="ml-2 px-4 py-2 text-sm font-bold border-2 border-red-600 text-red-600 bg-transparent rounded-full shadow-sm hover:bg-red-50 hover:text-red-700 hover:border-red-700 hover:scale-105 transition-all duration-200 relative z-30 focus:outline-none focus:ring-2 focus:ring-red-300"
-                          style={{ position: 'relative' }}
-                          onClick={() => setShowBuildInfo(true)}
-                          aria-label="Show Build Your Own Pizza Info"
-                        >
-                          Info
-                        </button>
-                      )}
-                      {item.category === 'Wings' && item.flavors && item.flavors.length > 0 && (
-                        <button
-                          className="ml-2 px-4 py-2 text-sm font-bold border-2 rounded-full shadow-lg transition-all duration-200 relative z-30 focus:outline-none focus:ring-2"
-                          style={{
-                            position: 'relative',
-                            borderColor: '#f59e42', // orange-400
-                            color: '#f59e42', // orange-400
-                            background: '#fff',
-                          }}
-                          onClick={() => setShowWingsFlavors({ open: true, itemName: item.name })}
-                          aria-label={`Show flavors for ${item.name}`}
-                        >
-                          Flavors
-                        </button>
+                activeCategory === 'Beverages' ? (
+                  <div key={item.name} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-xl font-bold text-gray-900">{item.name}</h3>
+                      </div>
+                      {/* Description and price intentionally omitted for beverages */}
+                    </div>
+                  </div>
+                ) : (
+                  <div key={item.name} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-48 object-cover object-center"
+                      loading="lazy"
+                      decoding="async"
+                      width={400}
+                      height={240}
+                    />
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-xl font-bold text-gray-900">{item.name}</h3>
+                        {item.name === 'Build Your Own Pizza' && (
+                          <button
+                            className="ml-2 px-4 py-2 text-sm font-bold border-2 border-red-600 text-red-600 bg-transparent rounded-full shadow-sm hover:bg-red-50 hover:text-red-700 hover:border-red-700 hover:scale-105 transition-all duration-200 relative z-30 focus:outline-none focus:ring-2 focus:ring-red-300"
+                            style={{ position: 'relative' }}
+                            onClick={() => setShowBuildInfo(true)}
+                            aria-label="Show Build Your Own Pizza Info"
+                          >
+                            Info
+                          </button>
+                        )}
+                        {item.category === 'Wings' && item.flavors && item.flavors.length > 0 && (
+                          <button
+                            className="ml-2 px-4 py-2 text-sm font-bold border-2 rounded-full shadow-lg transition-all duration-200 relative z-30 focus:outline-none focus:ring-2"
+                            style={{
+                              position: 'relative',
+                              borderColor: '#f59e42', // orange-400
+                              color: '#f59e42', // orange-400
+                              background: '#fff',
+                            }}
+                            onClick={() => setShowWingsFlavors({ open: true, itemName: item.name })}
+                            aria-label={`Show flavors for ${item.name}`}
+                          >
+                            Flavors
+                          </button>
+                        )}
+                      </div>
+                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
+                      {/* Only show price for non-salad or single-size salad items */}
+                      {item.category === 'Salads' && item.sizes && item.sizes.length > 1 ? null : (
+                        <div className="text-2xl font-bold text-red-600">
+                          {item.sizes && item.sizes.length === 1
+                            ? `$${item.sizes[0].price.toFixed(2)}`
+                            : (typeof item.price === 'number' ? `$${item.price.toFixed(2)}` : '')}
+                        </div>
                       )}
                     </div>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
-                    {/* Only show price for non-salad or single-size salad items */}
-                    {item.category === 'Salads' && item.sizes && item.sizes.length > 1 ? null : (
-                      <div className="text-2xl font-bold text-red-600">
-                        {item.sizes && item.sizes.length === 1
-                          ? `$${item.sizes[0].price.toFixed(2)}`
-                          : (typeof item.price === 'number' ? `$${item.price.toFixed(2)}` : '')}
-                      </div>
-                    )}
                   </div>
-                </div>
+                )
               ))}
             </div>
           </div>

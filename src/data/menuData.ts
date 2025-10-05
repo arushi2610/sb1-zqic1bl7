@@ -265,7 +265,29 @@ export const menuData: MenuItem[] = [
   { id: 'tiramisu', name: 'Tiramisu', description: 'A rich creamy Italian dessert with coffee, cream and cocoa.', category: 'Desserts', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'cheesecake-slice', name: 'Cheesecake Slice', description: 'Rich and velvety cheesecake slice with a buttery base.', category: 'Desserts', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'cookie-pizza', name: 'Cookie Pizza', description: 'A decadent 8-inch, soft and chewy chocolate chip cookie baked until golden brown. Made with semi-sweet chocolate chips', category: 'Desserts', dietary: ['V'], price: 8.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  // --- Beverages: Cans ($2.50) ---
+  { id: 'can-cocacola', name: 'Coca-Cola', description: 'Classic Coca-Cola in a 12oz can', category: 'Cans', price: 2.50, image: '' },
+  { id: 'can-fanta', name: 'Fanta', description: 'Orange Fanta in a 12oz can', category: 'Cans', price: 2.50, image: '' },
+  { id: 'can-fanta-pineapple', name: 'Fanta Pineapple', description: 'Pineapple Fanta in a 12oz can', category: 'Cans', price: 2.50, image: '' },
+  { id: 'can-sprite', name: 'Sprite', description: 'Lemon-lime Sprite in a 12oz can', category: 'Cans', price: 2.50, image: '' },
+  { id: 'can-sprite-zero', name: 'Sprite Zero Sugar', description: 'Zero sugar Sprite in a 12oz can', category: 'Cans', price: 2.50, image: '' },
+  { id: 'can-coke-zero', name: 'Coke Zero', description: 'Zero sugar Coca-Cola in a 12oz can', category: 'Cans', price: 2.50, image: '' },
+  { id: 'can-diet-coke', name: 'Diet Coke', description: 'Diet Coca-Cola in a 12oz can', category: 'Cans', price: 2.50, image: '' },
+  { id: 'can-root-beer', name: 'Root Beer', description: 'Classic root beer in a 12oz can', category: 'Cans', price: 2.50, image: '' },
+  // --- Beverages: 20oz ($4.50) ---
+  { id: '20oz-cocacola', name: 'Coca-Cola', description: 'Classic Coca-Cola in a 20oz bottle', category: '20oz', price: 4.50, image: '' },
+  { id: '20oz-diet-coke', name: 'Diet Coke', description: 'Diet Coca-Cola in a 20oz bottle', category: '20oz', price: 4.50, image: '' },
+  { id: '20oz-fanta', name: 'Fanta', description: 'Orange Fanta in a 20oz bottle', category: '20oz', price: 4.50, image: '' },
+  { id: '20oz-dasani-water', name: 'Dasani Water', description: 'Purified Dasani water in a 20oz bottle', category: '20oz', price: 4.50, image: '' },
+  { id: '20oz-pure-leaf-sweet', name: 'Pure Leaf Tea (Sweetened)', description: 'Sweetened iced tea in a 20oz bottle', category: '20oz', price: 4.50, image: '' },
+  { id: '20oz-pure-leaf-unsweet', name: 'Pure Leaf Tea (Unsweetened)', description: 'Unsweetened iced tea in a 20oz bottle', category: '20oz', price: 4.50, image: '' },
+  // --- Beverages: 2 Liters ($5.50) ---
+  { id: '2ltr-coke', name: 'Coke', description: 'Classic Coca-Cola in a 2 liter bottle', category: '2 Liters', price: 5.50, image: '' },
+  { id: '2ltr-diet-coke', name: 'Diet Coke', description: 'Diet Coca-Cola in a 2 liter bottle', category: '2 Liters', price: 5.50, image: '' },
+  { id: '2ltr-fanta', name: 'Fanta', description: 'Orange Fanta in a 2 liter bottle', category: '2 Liters', price: 5.50, image: '' },
+  { id: '2ltr-sprite', name: 'Sprite', description: 'Lemon-lime Sprite in a 2 liter bottle', category: '2 Liters', price: 5.50, image: '' },
 ];
+
 
 export const categories = [
   'Pizzas',
@@ -274,5 +296,6 @@ export const categories = [
   'Mac n’ Cheese',
   'Salads',
   'Subs & Sandwiches',
-  'Desserts'
+  'Desserts',
+  'Beverages'
 ];

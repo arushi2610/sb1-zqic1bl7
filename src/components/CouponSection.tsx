@@ -14,9 +14,18 @@ const CouponSection: React.FC = () => {
 
         <div className="flex-1 min-w-0">
           <h3 className="text-lg md:text-xl font-bold text-gray-900">Limited-time promotions</h3>
-          <p className="text-sm text-gray-600 mt-1">Save today with our move-in special and pizza bundle offer. Offer expires Oct 16.</p>
+          <p className="text-sm text-gray-600 mt-1">Save today with our lunch special, move-in special and pizza bundle offer.</p>
 
-          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div 
+              className="bg-white border rounded-lg p-3 shadow-sm min-w-0 cursor-pointer hover:shadow-md transition-shadow"
+              onClick={() => trackCouponView('LUNCH_SPECIAL')}
+            >
+              <div className="text-sm font-semibold text-gray-700">Lunch Special</div>
+              <div className="text-2xl md:text-3xl font-bold text-red-600">$14.99<span className="text-sm font-normal">+tax</span></div>
+              <div className="text-xs text-gray-500 mt-1">Any small pizza with drink from 11am-2:30pm EVERY DAY</div>
+            </div>
+
             <div 
               className="bg-white border rounded-lg p-3 shadow-sm min-w-0 cursor-pointer hover:shadow-md transition-shadow"
               onClick={() => trackCouponView('STUDENT20')}
@@ -31,7 +40,7 @@ const CouponSection: React.FC = () => {
               onClick={() => trackCouponView('B2G1LARGE')}
             >
               <div className="text-sm font-semibold text-gray-700">Buy 2 large specialty pizzas</div>
-              <div className="text-2xl md:text-3xl font-bold text-red-600">Get ANY Large Pizza FREE</div>
+              <div className="text-2xl md:text-xl font-bold text-red-600">Get ANY Large Pizza FREE</div>
               <div className="text-xs text-gray-500 mt-1">Applied to the cheapest eligible large pizza in the cart.</div>
             </div>
           </div>
