@@ -23,7 +23,7 @@ const CouponSection: React.FC = () => {
             >
               <div className="text-sm font-semibold text-gray-700">Lunch Special</div>
               <div className="text-2xl md:text-3xl font-bold text-red-600">$14.99<span className="text-sm font-normal">+tax</span></div>
-              <div className="text-xs text-gray-500 mt-1">Any small pizza with drink from 11am-2:30pm EVERY DAY</div>
+              <div className="text-xs text-gray-500 mt-1">Any small pizza with drink from 11am-2:30pm <strong>Monday to Friday</strong></div>
             </div>
 
             <div 

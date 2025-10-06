@@ -156,6 +156,19 @@ const MenuSection: React.FC = () => {
               {items.map((item: MenuItem) => (
                 activeCategory === 'Beverages' ? (
                   <div key={item.name} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                    {item.image && (
+                      <div className="w-full h-48 flex items-center justify-center" style={{ backgroundColor: '#a0a0a0' }}>
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="max-h-40 object-contain object-center"
+                          loading="lazy"
+                          decoding="async"
+                          width={200}
+                          height={120}
+                        />
+                      </div>
+                    )}
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-xl font-bold text-gray-900">{item.name}</h3>
