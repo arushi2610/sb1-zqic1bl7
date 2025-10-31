@@ -15,6 +15,7 @@ const CouponSection: React.FC = () => {
         <div className="flex-1 min-w-0">
           <h3 className="text-lg md:text-xl font-bold text-gray-900">Limited-time promotions</h3>
           <p className="text-sm text-gray-600 mt-1">Save today with our lunch special, move-in special and pizza bundle offer.</p>
+          {/* Promo image moved below the coupon cards (kept hidden on small screens) */}
 
           <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <div 
@@ -26,13 +27,22 @@ const CouponSection: React.FC = () => {
               <div className="text-xs text-gray-500 mt-1">Any small pizza with drink from 11am-2:30pm <strong>Monday to Friday</strong></div>
             </div>
 
-            <div 
+            <div
               className="bg-white border rounded-lg p-3 shadow-sm min-w-0 cursor-pointer hover:shadow-md transition-shadow"
-              onClick={() => trackCouponView('STUDENT20')}
+              onClick={() => trackCouponView('GROUP_OFFER')}
             >
-              <div className="text-sm font-semibold text-gray-700">Students move-in special</div>
-              <div className="text-2xl md:text-3xl font-bold text-red-600">20% OFF</div>
-              <div className="text-xs text-gray-500 mt-1">Show your Student ID to get the discount!</div>
+              <div className="text-sm font-semibold text-gray-700">Group Catering Packages</div>
+              <div className="mt-2 text-sm text-gray-900 font-bold">For 30 people <span className="text-red-600">($185 + tax)</span></div>
+              <ul className="list-disc pl-5 text-xs text-gray-700 mt-2">
+                <li>8 Large Pizzas</li>
+              </ul>
+
+              <div className="mt-3 text-sm text-gray-900 font-bold">For 40 people <span className="text-red-600">($250 + tax)</span></div>
+              <ul className="list-disc pl-5 text-xs text-gray-700 mt-2">
+                <li>8 Large Pizzas</li>
+                <li>Pan of Chicken Wings</li>
+                <li>3 Sodas</li>
+              </ul>
             </div>
 
             <div 
@@ -46,11 +56,15 @@ const CouponSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-24 text-left md:text-center text-sm text-gray-500 mt-3 md:mt-0">
-          <div className="mb-1 md:mb-2">Ends</div>
-          <div className="text-lg md:text-xl font-bold">Oct 15</div>
-          <div className="text-xs">2025</div>
-        </div>
+      
+      </div>
+      {/* Promo image placed below the coupons */}
+      <div className="mt-6 flex justify-center">
+        <img
+          src="/halloweenoffer.jpg"
+          alt="Spooky Good Deals"
+          className="hidden md:block md:w-80 lg:w-96 h-auto rounded-md shadow-lg"
+        />
       </div>
     </div>
   );
