@@ -71,9 +71,7 @@ const HeroSection: React.FC = () => {
         
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
           Manager's Pizza
-        </h1>
-        <h3 className="text-xl md:text-2xl text-red-400 font-semibold mb-2">Open till 1 AM on Halloween Night</h3>
-        
+        </h1>        
         <h2 className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed font-medium">
           Fresh dough, bold fusion, and handcrafted flavors in Seattle's U District
         </h2>
