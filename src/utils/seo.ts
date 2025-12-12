@@ -52,6 +52,17 @@ export const sectionSEO = {
       "pizza tradition"
     ]
   },
+  faq: {
+    title: "FAQ - Manager's Pizza | Ordering, Delivery, Hours",
+    description: "Find quick answers about hours, ordering online or by phone, delivery areas, pickup timing, dietary options, and catering at Manager's Pizza.",
+    keywords: [
+      "pizza faq",
+      "pizza delivery questions",
+      "manager's pizza faq",
+      "order pizza online",
+      "pizza catering"
+    ]
+  },
   contact: {
     title: "Contact & Location - Manager's Pizza | Order Online",
     description: "Get in touch with Manager's Pizza for orders, inquiries, or feedback. Find our location, phone number, and ordering information.",

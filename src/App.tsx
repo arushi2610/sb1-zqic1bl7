@@ -4,6 +4,8 @@ import CouponSection from './components/CouponSection';
 import HeroSection from './components/HeroSection';
 const MenuSection = React.lazy(() => import('./components/MenuSection'));
 import AboutSection from './components/AboutSection';
+import CustomerReviewsSection from './components/CustomerReviewsSection';
+import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import OrderOnlineSection from './components/OrderOnlineSection';
 import Footer from './components/Footer';
@@ -16,7 +18,7 @@ export default function App() {
   useEffect(() => {
     // Throttle scroll updates with rAF and use a passive listener to avoid blocking scrolling.
     let ticking = false;
-    const sections = ['home', 'menu', 'about', 'contact'];
+    const sections = ['home', 'menu', 'about', 'reviews', 'faq', 'contact'];
 
     const update = () => {
       const scrollPosition = window.scrollY + 100;
@@ -49,11 +51,6 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
-    // Track section navigation
-    trackSectionView(sectionId);
-    
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     // Track section navigation
@@ -94,34 +91,11 @@ export default function App() {
       <section id="about">
         <AboutSection />
       </section>
-      <section id="contact">
-        <ContactSection />
+      <section id="reviews">
+        <CustomerReviewsSection />
       </section>
-      <section id="order-online">
-        <OrderOnlineSection />
-      </section>
-      <Footer />
-    </div>
-  );
-}
-
-  return (
-    <div className="min-h-screen bg-white">
-      <Header 
-        activeSection={activeSection} 
-        onSectionChange={scrollToSection} 
-      />
-      <section id="home">
-        <HeroSection />
-        <CouponSection />
-      </section>
-      <section id="menu">
-        <Suspense fallback={<div className="py-20">Loading menu…</div>}>
-          <MenuSection />
-        </Suspense>
-      </section>
-      <section id="about">
-        <AboutSection />
+      <section id="faq">
+        <FAQSection />
       </section>
       <section id="contact">
         <ContactSection />

@@ -16,6 +16,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
     { id: 'home', label: 'Home' },
     { id: 'menu', label: 'Menu' },
     { id: 'about', label: 'About' },
+    { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' },
     { id: 'order-online', label: 'Order Online' }
   ];
