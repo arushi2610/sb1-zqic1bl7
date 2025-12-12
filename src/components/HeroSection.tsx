@@ -70,10 +70,10 @@ const HeroSection: React.FC = () => {
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-          Manager's Pizza
+          Manager's Pizza — University District
         </h1>        
         <h2 className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed font-medium">
-          Fresh dough, bold fusion, and handcrafted flavors in Seattle's U District
+          Fresh dough, bold fusion, and handcrafted flavors in Seattle's University District
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
