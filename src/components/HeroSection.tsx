@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, MapPin, Phone, Clock } from 'lucide-react';
 
-const HERO_IMG_OPTIMIZED = '/mpbgimg.jpeg';
-const HERO_IMG_FALLBACK = '/mpbgimg.jpeg';
+const HERO_IMG_OPTIMIZED = '/Header_Manager’s Pizza.jpg';
+const HERO_IMG_FALLBACK = '/Header_Manager’s Pizza.jpg';
 
 const HeroSection: React.FC = () => {
   const handleOrderNow = () => {
@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
           Manager's Pizza — University District
         </h1>        
         <h2 className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed font-medium">
-          Passion and Flavor for all in Seattle's University District
+          Passion and Flavor for all 
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
