@@ -29,12 +29,24 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div
-              className="flex items-center space-x-2 cursor-pointer"
-              onClick={() => onSectionChange('home')}
-              style={{ minWidth: 64 }}
-            >
+            {/* Mobile: Menu + Logo grouped together on left */}
+            <div className="flex items-center md:contents">
+              {/* Mobile Menu Button */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="p-2 text-gray-700 hover:text-red-600 transition-colors"
+                >
+                  {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </div>
+
+              {/* Logo */}
+              <div
+                className="flex items-center space-x-2 cursor-pointer -ml-5"
+                onClick={() => onSectionChange('home')}
+                style={{ minWidth: 64 }}
+              >
               <img
               src="/PHOTO-2025-06-13-09-00-06.jpg"
               alt="Manager's Pizza Logo"
@@ -49,6 +61,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
                 t.src = '/images/placeholder.png';
               }}
               />
+            </div>
             </div>
 
             {/* Desktop Navigation */}
@@ -102,14 +115,10 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               </div>
             </div>
 
-            {/* Mobile Menu only (cart icon removed) */}
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 text-gray-700 hover:text-red-600 transition-colors"
-              >
-                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
+            {/* Mobile Store Timings - Top Right */}
+            <div className="flex items-center md:hidden text-xs text-gray-600">
+              <Clock className="h-3 w-3 mr-1" />
+              <span>Open Daily 10am - 11pm</span>
             </div>
           </div>
 
@@ -165,7 +174,15 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />
-                  <span>4741 12th Ave, NE Seattle, 98105</span>
+                  <a 
+                    href="https://maps.app.goo.gl/EAPuDhmpYLoHBa7a8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackContactInteraction('location')}
+                    className="hover:text-red-600 transition-colors"
+                  >
+                    4741 12th Ave, NE Seattle, 98105
+                  </a>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4" />

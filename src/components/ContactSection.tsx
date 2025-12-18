@@ -51,10 +51,15 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
-                  <p className="text-gray-600">
+                  <a 
+                    href="https://maps.app.goo.gl/EAPuDhmpYLoHBa7a8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-red-600 transition-colors"
+                  >
                     4741 12th Ave, NE<br />
                     Seattle, WA 98105<br />
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -64,7 +69,12 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p className="text-gray-600">(206) 413-5548</p>
+                  <a 
+                    href="tel:+12064135548"
+                    className="text-gray-600 hover:text-red-600 transition-colors block underline"
+                  >
+                    (206) 413-5548
+                  </a>
                   <p className="text-sm text-gray-500">Call for orders, reservations, or questions</p>
                 </div>
               </div>

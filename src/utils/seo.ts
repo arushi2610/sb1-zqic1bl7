@@ -24,7 +24,7 @@ export const defaultSEO: SEOData = {
     "authentic flavors",
     "Manager's Pizza"
   ],
-  ogImage: "/Manager_sPizza_Hero.jpg",
+  ogImage: "/mpbgimg.jpeg",
   canonicalUrl: "https://managerspizza.com"
 };
 
@@ -144,7 +144,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Manager's Pizza",
-  "image": "https://managerspizza.com/Manager_sPizza_Hero.jpg",
+  "image": "https://managerspizza.com/mpbgimg.jpeg",
   "description": defaultSEO.description,
   "url": "https://managerspizza.com",
   "telephone": "+1-XXX-XXX-XXXX", // Replace with actual phone

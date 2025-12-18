@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, MapPin, Phone, Clock } from 'lucide-react';
 
-const HERO_IMG_OPTIMIZED = '/images/optimized/Manager_sPizza_Hero-1024.webp';
-const HERO_IMG_FALLBACK = '/Manager_sPizza_Hero.jpg';
+const HERO_IMG_OPTIMIZED = '/mpbgimg.jpeg';
+const HERO_IMG_FALLBACK = '/mpbgimg.jpeg';
 
 const HeroSection: React.FC = () => {
   const handleOrderNow = () => {
@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
           Manager's Pizza — University District
         </h1>        
         <h2 className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed font-medium">
-          Fresh dough, bold fusion, and handcrafted flavors in Seattle's University District
+          Passion and Flavor for all in Seattle's University District
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -87,7 +87,7 @@ const HeroSection: React.FC = () => {
         </div>
         
         {/* Quick Info Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mt-16">
+        <div className="grid md:grid-cols-2 gap-6 mt-16 max-w-2xl mx-auto">
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
             <div className="flex items-center justify-center mb-4">
               <div className="bg-red-600 p-3 rounded-full">
@@ -95,17 +95,14 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             <h3 className="text-lg font-semibold mb-2">Location</h3>
-            <p className="text-gray-200">4741 12th Ave, NE Seattle, 98105</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-            <div className="flex items-center justify-center mb-4">
-              <div className="bg-red-600 p-3 rounded-full">
-                <Clock className="h-6 w-6 text-white" />
-              </div>
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Hours</h3>
-            <p className="text-gray-200">Daily<br />10am - 11pm</p>
+            <a 
+              href="https://maps.app.goo.gl/EAPuDhmpYLoHBa7a8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-200 hover:text-white transition-colors underline cursor-pointer"
+            >
+              4741 12th Ave, NE Seattle, 98105
+            </a>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
@@ -115,7 +112,12 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             <h3 className="text-lg font-semibold mb-2">Call Us</h3>
-            <p className="text-gray-200">(206) 413-5548<br />Order by Phone</p>
+            <a 
+              href="tel:+12064135548"
+              className="text-gray-200 hover:text-white transition-colors underline"
+            >
+              (206) 413-5548
+            </a>
           </div>
         </div>
       </div>

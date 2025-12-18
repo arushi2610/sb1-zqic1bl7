@@ -44,18 +44,29 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-red-400" />
-                <span className="text-gray-400 text-sm">4741 12th Ave, NE Seattle, 98105
-</span>
+                <a 
+                  href="https://maps.app.goo.gl/EAPuDhmpYLoHBa7a8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 text-sm hover:text-red-400 transition-colors"
+                >
+                  4741 12th Ave, NE Seattle, 98105
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-red-400" />
-                <span className="text-gray-400 text-sm">(206) 413-5548</span>
+                <a 
+                  href="tel:+12064135548"
+                  className="text-gray-400 text-sm hover:text-red-400 transition-colors underline"
+                >
+                  (206) 413-5548
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-red-400" />
                 <span className="text-gray-400 text-sm">info@managerspizza.online</span>
               </div>
-              <div className="flex items-center space-x-3">
+             <div className="flex items-center space-x-3">
                 <Instagram className="h-4 w-4 text-red-400" />
                 <a
                   href="https://www.instagram.com/managerspizzaseattle/"

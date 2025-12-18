@@ -2,8 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Use a small optimized favicon (add public/favicon.ico to the repo) -->
-    <link rel="icon" href="/favicon.ico" />
+    <!-- Favicon in multiple sizes -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/MP-main-pizza-logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/MP-main-pizza-logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/MP-main-pizza-logo.png" />
+    <link rel="shortcut icon" href="/MP-main-pizza-logo.png" />
     <!-- preload the app entry for faster startup (modulepreload for module graph) -->
     <link rel="modulepreload" href="/src/main.tsx" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +25,7 @@
     <meta property="og:url" content="https://managerspizza.com" />
     <meta property="og:title" content="Manager's Pizza - Authentic Indian & Classic Pizzas in University District" />
     <meta property="og:description" content="Experience the best of both worlds at Manager's Pizza in University District! Authentic Indian-spiced pizzas like Tandoori Chicken & Butter Chicken, plus classic favorites. Order online now!" />
-    <meta property="og:image" content="https://managerspizza.com/Manager_sPizza_Hero.jpg" />
+    <meta property="og:image" content="https://managerspizza.com/mpbgimg.jpeg" />
     <meta property="og:image:alt" content="Manager's Pizza - Delicious Indian and classic pizzas in University District" />
     <meta property="og:site_name" content="Manager's Pizza" />
     <meta property="og:locale" content="en_US" />
@@ -32,7 +35,7 @@
     <meta property="twitter:url" content="https://managerspizza.com" />
     <meta property="twitter:title" content="Manager's Pizza - Authentic Indian & Classic Pizzas in University District" />
     <meta property="twitter:description" content="Experience the best of both worlds at Manager's Pizza in University District! Authentic Indian-spiced pizzas like Tandoori Chicken & Butter Chicken, plus classic favorites. Order online now!" />
-    <meta property="twitter:image" content="https://managerspizza.com/Manager_sPizza_Hero.jpg" />
+    <meta property="twitter:image" content="https://managerspizza.com/mpbgimg.jpeg" />
     <meta property="twitter:image:alt" content="Manager's Pizza - Delicious Indian and classic pizzas in University District" />
     
     <!-- Business/Restaurant specific -->
@@ -49,7 +52,7 @@
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "Manager's Pizza",
-      "image": "https://managerspizza.com/Manager_sPizza_Hero.jpg",
+      "image": "https://managerspizza.com/mpbgimg.jpeg",
       "description": "Experience the best of both worlds at Manager's Pizza in University District! Authentic Indian-spiced pizzas like Tandoori Chicken & Butter Chicken, plus classic favorites. Fresh ingredients, bold flavors.",
       "url": "https://managerspizza.com",
       "telephone": "+1-XXX-XXX-XXXX",
@@ -159,7 +162,7 @@
   <!-- Preconnect fonts and preload critical logo/hero -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Preload LCP hero image (optimized WebP) to improve Largest Contentful Paint -->
-  <link rel="preload" as="image" href="/images/optimized/Manager_sPizza_Hero-1024.webp" />
+  <link rel="preload" as="image" href="/mpbgimg.jpeg" />
   <!-- Preload the logo too (small) -->
   <link rel="preload" as="image" href="/MP-main-pizza-logo.png" />
   </head>

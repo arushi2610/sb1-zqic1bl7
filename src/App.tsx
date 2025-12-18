@@ -74,13 +74,29 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div 
+      className="min-h-screen bg-white bg-cover bg-center bg-fixed bg-no-repeat"
+      style={{
+        backgroundImage: "/mpbgimg.jpeg'",
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="min-h-screen bg-white/90 backdrop-blur-sm">
       <Header 
         activeSection={activeSection} 
         onSectionChange={scrollToSection} 
       />
       <section id="home">
         <HeroSection />
+        <div className="w-full max-w-2xl mx-auto my-4 px-4">
+          <img 
+            src="/mppromo.jpeg" 
+            alt="Lunch Time Meal Deal - $14.99 Small Pizza with Drink" 
+            className="w-full md:w-2/3 lg:w-1/2 mx-auto h-auto rounded-lg shadow-lg"
+            loading="lazy"
+          />
+        </div>
         <CouponSection />
       </section>
       <section id="menu">
@@ -104,6 +120,7 @@ export default function App() {
         <OrderOnlineSection />
       </section>
       <Footer />
+      </div>
     </div>
   );
 }

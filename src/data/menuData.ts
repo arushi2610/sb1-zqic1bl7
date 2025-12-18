@@ -237,7 +237,7 @@ export const menuData: MenuItem[] = [
   { id: 'cheese-knots-bacon', name: 'Cheese Knots (Bacon-Loaded)', description: 'Rich and buttery rolls made with white garlic sauce, whole milk mozzarella, and smoked bacon. Served with your favorite dipping sauce. ', category: 'Starters & Sides', price: 8.99, image: '/ManagersPizza_BaconCheeseKnots.jpg' },
 
   // 🧀 Mac n’ Cheese
-  { id: 'mac-classic', name: 'Mac n’ Cheese (Classic)', description: 'Creamy, cheesy, and comforting—our classic mac and cheese is made with tender elbow pasta smothered in a rich blend of melted cheeses. A timeless favorite!', price: 8.99, category: 'Mac n’ Cheese', dietary: ['V'], image: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'mac-classic', name: 'Mac n’ Cheese (Classic)', description: 'Creamy, cheesy, and comforting—our classic mac and cheese is made with tender elbow pasta smothered in a rich blend of melted cheeses. A timeless favorite!', price: 8.99, category: 'Mac n’ Cheese', dietary: ['V'], image: 'macncheese.jpg' },
   { id: 'mac-buffalo-chicken', name: 'Mac n’ Cheese (Buffalo Chicken)', description: 'Our creamy mac and cheese gets a bold twist! Topped with spicy buffalo chicken, drizzled with ranch, and finished with a hint of heat. Comfort food with a kick.', price: 10.99, category: 'Mac n’ Cheese', image: '/ManagersPizza_BuffaloMacnCheese.jpg' },
 
   // 🥗 Salads
