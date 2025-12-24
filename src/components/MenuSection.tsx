@@ -157,7 +157,7 @@ const MenuSection: React.FC = () => {
                 activeCategory === 'Beverages' ? (
                   <div key={item.name} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
                     {item.image && (
-                      <div className="w-full h-48 flex items-center justify-center" style={{ backgroundColor: '#a0a0a0' }}>
+                      <div className="w-full h-48 flex items-center justify-center" style={{ backgroundColor: '#ffffff' }}>
                         <img
                           src={item.image}
                           alt={item.name}

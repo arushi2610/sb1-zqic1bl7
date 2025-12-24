@@ -84,18 +84,33 @@ export default function App() {
     >
       <div className="min-h-screen bg-white/90 backdrop-blur-sm">
       <Header 
-        activeSection={activeSection} 
+        activeSection={activeSection}
         onSectionChange={scrollToSection} 
       />
       <section id="home">
         <HeroSection />
-        <div className="w-full max-w-2xl mx-auto my-4 px-4">
-          <img 
-            src="/mppromo.jpeg" 
-            alt="Lunch Time Meal Deal - $14.99 Small Pizza with Drink" 
-            className="w-full md:w-2/3 lg:w-1/2 mx-auto h-auto rounded-lg shadow-lg"
-            loading="lazy"
-          />
+        <div className="w-full max-w-7xl mx-auto my-8 px-4">
+          {/* All 3 Promotions - Side by side on desktop, stacked on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <img 
+              src="/Celebratechristmas2.jpg" 
+              alt="Hali Luya - Special Holiday Hours for Christmas and New Year" 
+              className="w-full h-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
+            <img 
+              src="/mppromo.jpeg" 
+              alt="Lunch Time Meal Deal - $14.99 Small Pizza with Drink" 
+              className="w-full h-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
+            <img 
+              src="/Celebratechristmastime.jpg" 
+              alt="Celebrate Christmas & New Year - 15% OFF Dec 24-25 | Dec 31-Jan 1" 
+              className="w-full h-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
         </div>
         <CouponSection />
       </section>
