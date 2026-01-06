@@ -91,25 +91,15 @@ export default function App() {
         <HeroSection />
         <div className="w-full max-w-7xl mx-auto my-8 px-4">
           {/* All 3 Promotions - Side by side on desktop, stacked on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <img 
-              src="/Celebratechristmas2.jpg" 
-              alt="Hali Luya - Special Holiday Hours for Christmas and New Year" 
-              className="w-full h-auto rounded-lg shadow-lg"
-              loading="lazy"
-            />
+          <div className="flex justify-center items-center mb-6">
+            
             <img 
               src="/mppromo.jpeg" 
               alt="Lunch Time Meal Deal - $14.99 Small Pizza with Drink" 
-              className="w-full h-auto rounded-lg shadow-lg"
+              className="w-full max-w-md h-auto rounded-lg shadow-lg"
               loading="lazy"
             />
-            <img 
-              src="/Celebratechristmastime.jpg" 
-              alt="Celebrate Christmas & New Year - 15% OFF Dec 24-25 | Dec 31-Jan 1" 
-              className="w-full h-auto rounded-lg shadow-lg"
-              loading="lazy"
-            />
+            
           </div>
         </div>
         <CouponSection />
