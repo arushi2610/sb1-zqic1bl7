@@ -91,12 +91,19 @@ export default function App() {
         <HeroSection />
         <div className="w-full max-w-7xl mx-auto my-8 px-4">
           {/* All 3 Promotions - Side by side on desktop, stacked on mobile */}
-          <div className="flex justify-center items-center mb-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
             
             <img 
               src="/mppromo.jpeg" 
               alt="Lunch Time Meal Deal - $14.99 Small Pizza with Drink" 
-              className="w-full max-w-md h-auto rounded-lg shadow-lg"
+              className="w-full md:w-1/2 max-w-md h-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
+            
+            <img 
+              src="/janoffer.jpeg" 
+              alt="Celebrate Pizza Week - Limited Time Offer - Pepperoni Pizza $18.99 Jan 11-17" 
+              className="w-full md:w-1/2 max-w-md h-auto rounded-lg shadow-lg"
               loading="lazy"
             />
             
