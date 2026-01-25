@@ -100,13 +100,6 @@ export default function App() {
               loading="lazy"
             />
             
-            <img 
-              src="/janoffer.jpeg" 
-              alt="Celebrate Pizza Week - Limited Time Offer - Pepperoni Pizza $18.99 Jan 11-17" 
-              className="w-full md:w-1/2 max-w-md h-auto rounded-lg shadow-lg"
-              loading="lazy"
-            />
-            
           </div>
         </div>
         <CouponSection />
