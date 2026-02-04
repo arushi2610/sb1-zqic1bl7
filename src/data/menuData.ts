@@ -11,7 +11,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -26,7 +26,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -42,7 +42,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -57,7 +57,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -72,7 +72,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -88,7 +88,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -103,7 +103,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -119,7 +119,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -134,7 +134,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -150,7 +150,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -166,7 +166,7 @@ export const menuData: MenuItem[] = [
     price: 18.99,
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -186,7 +186,7 @@ export const menuData: MenuItem[] = [
     category: 'Build Your Own Pizza',
     sizes: [
       { name: 'Small (10")', price: 18.99 },
-      { name: 'Medium (12")', price: 22.99 },
+      { name: 'Medium (12")', price: 24.99 },
       { name: 'Large (14")', price: 28.99 },
       { name: 'XL (16")', price: 34.99 }
     ],
@@ -208,62 +208,93 @@ export const menuData: MenuItem[] = [
   { id: 'mediterranean', name: 'Mediterranean', description: 'Chicken, artichoke hearts, olives, and sundried tomatoes, and feta cheese on pesto sauce. ', category: 'Signature Pizzas', dietary: ['V'], price: 18.99, image: '/Manager_sPizza_MediterraneanPizza.png' },
 
   // 🍕 Classic Pizzas
-  { id: 'classic-pepperoni', name: 'Classic Pepperoni', description: 'Our hand-tossed crust topped with rich tomato sauce, whole milk-mozzarella and crispy pepperoni. ', category: 'Classic Pizzas', price: 15.99, image: '/Manager_sPizza_PepperoniPizza.png' },
-  { id: 'classic-cheese', name: 'Classic Cheese', description: 'Our hand-tossed crust topped with rich tomato sauce and whole milk-mozzarella.', category: 'Classic Pizzas', dietary: ['V'], price: 13.99, image: '/Manager_sPizza_CheesePizza.png' },
+  { 
+    id: 'classic-cheese', 
+    name: 'Classic Cheese', 
+    description: 'Our hand-tossed crust topped with rich tomato sauce and whole milk-mozzarella.', 
+    category: 'Classic Pizzas', 
+    dietary: ['V'], 
+    price: 14.99, 
+    image: '/Manager_sPizza_CheesePizza.png',
+    sizes: [
+      { name: 'Small (10")', price: 14.99 },
+      { name: 'Medium (12")', price: 19.99 },
+      { name: 'Large (14")', price: 23.99 },
+      { name: 'XL (16")', price: 28.99 }
+    ],
+    crusts: ['Regular']
+  },
+  { 
+    id: 'classic-pepperoni', 
+    name: 'Classic Pepperoni', 
+    description: 'Our hand-tossed crust topped with rich tomato sauce, whole milk-mozzarella and crispy pepperoni. ', 
+    category: 'Classic Pizzas', 
+    price: 14.99, 
+    image: '/Manager_sPizza_PepperoniPizza.png',
+    sizes: [
+      { name: 'Small (10")', price: 14.99 },
+      { name: 'Medium (12")', price: 19.99 },
+      { name: 'Large (14")', price: 23.99 },
+      { name: 'XL (16")', price: 28.99 }
+    ],
+    crusts: ['Regular']
+  },
 
   // Build Your Own Pizza (removed duplicate)
 
   // 🍗 Wings
-  { id: 'classic-wings-10', name: 'Classic Wings (10 pcs)', description: 'Choose your flavor!', price: 12.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
-  { id: 'classic-wings-20', name: 'Classic Wings (20 pcs)', description: 'Choose your flavor!', price: 22.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
+  { id: 'classic-wings-10', name: 'Classic Wings (10 pcs)', description: 'Choose your flavor!', price: 14.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
+  { id: 'classic-wings-20', name: 'Classic Wings (20 pcs)', description: 'Choose your flavor!', price: 26.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
   { id: 'boneless-wings-half', name: 'Boneless Wings (½ lb)', description: 'Choose your flavor!', price: 10.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
   { id: 'boneless-wings-1lb', name: 'Boneless Wings (1 lb)', description: 'Choose your flavor!', price: 16.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
+  { id: 'veggie-wings-6', name: 'Veggie Wings (6 pcs)', description: 'Choose your flavor!', price: 9.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', dietary: ['V'], flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
+  { id: 'veggie-wings-12', name: 'Veggie Wings (12 pcs)', description: 'Choose your flavor!', price: 17.99, image: 'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=800', category: 'Wings', dietary: ['V'], flavors: ['Buffalo', 'BBQ', 'Mango Habanero', 'Sweet Chili', 'Teriyaki', 'Lemon Pepper', 'Garlic Parmesan', 'Tangy Tandoori', 'Pickle Pop'] },
 
   // 🍟 Starters & Sides
-  { id: 'garlic-bread-cheese', name: 'Garlic Bread with Cheese', description: 'Toasted bread topped with garlic butter and melted mozzarella cheese.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'garlic-sticks', name: 'Garlic Sticks with Cheese', description: 'Soft breadsticks brushed with garlic butter and topped with mozzarella cheese.', category: 'Starters & Sides', dietary: ['V'], price: 6.99, image: '/ManagersPizza_GarlicSticksWithCheese.png' },
-  { id: 'pesto-sticks', name: 'Pesto Sticks', description: 'Soft breadsticks topped with aromatic pesto sauce and mozzarella cheese.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'masala-breadsticks', name: 'Masala Breadsticks', description: 'Crispy breadsticks seasoned with a flavorful blend of Indian spices.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: '/ManagersPizza_MasalaBreadsticks.png' },
+  { id: 'garlic-bread-cheese', name: 'Garlic Bread with Cheese', description: 'Toasted bread topped with garlic butter and melted mozzarella cheese.', category: 'Starters & Sides', dietary: ['V'], price: 6.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'garlic-sticks', name: 'Garlic Sticks with Cheese', description: 'Soft breadsticks brushed with garlic butter and topped with mozzarella cheese.', category: 'Starters & Sides', dietary: ['V'], price: 9.99, image: '/ManagersPizza_GarlicSticksWithCheese.png' },
+  { id: 'pesto-sticks', name: 'Pesto Sticks with Cheese', description: 'Soft breadsticks topped with aromatic pesto sauce and mozzarella cheese.', category: 'Starters & Sides', dietary: ['V'], price: 9.99, image: 'https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'masala-breadsticks', name: 'Masala Breadsticks', description: 'Crispy breadsticks seasoned with a flavorful blend of Indian spices.', category: 'Starters & Sides', dietary: ['V'], price: 10.99, image: '/ManagersPizza_MasalaBreadsticks.png' },
   { id: 'mozzarella-sticks', name: 'Mozzarella Sticks (8 pcs)', description: 'Crispy golden sticks filled with melted mozzarella cheese with the choice of dipping ranch or marinara.', category: 'Starters & Sides', dietary: ['V'], price: 9.99, image: '/Manager_sPizza_MozzerallaSticks.png' },
-  { id: 'jalapeno-poppers', name: 'Jalapeño Poppers (8 pcs)', description: 'Crispy fried jalapeños stuffed with creamy cheese with the choice of dipping ranch or blue cheese.', category: 'Starters & Sides', dietary: ['V'], price: 8.99, image: '/ManagersPizza_JalapenoPoppers.png' },
+  { id: 'jalapeno-poppers', name: 'Jalapeño Poppers (8 pcs)', description: 'Crispy fried jalapeños stuffed with creamy cheese with the choice of dipping ranch or blue cheese.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: '/ManagersPizza_JalapenoPoppers.png' },
   { id: 'cauliflower-crisps', name: 'Cauliflower Crisps', description: 'Light and crunchy bites made from seasoned cauliflower.A tasty wholesome snack.', category: 'Starters & Sides', dietary: ['V'], price: 8.99, image: '/ManagersPizza_CauliflowerBites.png' },
   { id: 'vegan-nuggets', name: 'Vegan Nuggets', description: 'Crispy,golden nuggets made from plant-based ingredients. Totally meat free.', category: 'Starters & Sides', dietary: ['VE'], price: 8.99, image: '/ManagersPizza_VeganNuggets.png' },
   { id: 'fries-regular', name: 'Fries (Regular)', description: 'Classic golden fries, lightly salted and perfect for any meal .', category: 'Starters & Sides', dietary: ['V'], price: 5.99, image: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'fries-garlic', name: 'Fries (Garlic)', description: 'Crispy fries tossed in garlic butter.', category: 'Starters & Sides', dietary: ['V'], price: 6.99, image: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'fries-bacon', name: 'Fries (Bacon-Loaded)', description: 'Golden fries topped with crispy bacon bits, fresh green onions and lots of cheese on the top.', category: 'Starters & Sides', price: 8.99, image: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'fries-truffle', name: 'Fries (Truffle Parmesan)', description: 'Crispy fries tossed in truffle oil and sprinkled with parmesan cheese.', category: 'Starters & Sides', price: 8.99, image: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'cheese-knots', name: 'Cheese Knots', description: 'Rich and buttery rolls made with white garlic sauce, whole milk mozzarella, and minced garlic. Served with your favorite dipping sauce.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: '/ManagersPizza_CheeseKnots.png' },
-  { id: 'cheese-knots-jalapeno', name: 'Cheese Knots (Jalapeño)', description: 'Rich and buttery rolls made with white garlic sauce, whole milk mozzarella, and diced pepperoni. Served with your favorite dipping sauce.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: '/ManagersPizza_JalapenosCheeseKnots.png' },
-  { id: 'cheese-knots-bacon', name: 'Cheese Knots (Bacon-Loaded)', description: 'Rich and buttery rolls made with white garlic sauce, whole milk mozzarella, and smoked bacon. Served with your favorite dipping sauce. ', category: 'Starters & Sides', price: 8.99, image: '/ManagersPizza_BaconCheeseKnots.png' },
+  { id: 'fries-garlic', name: 'Fries (Garlic)', description: 'Crispy fries tossed in garlic butter.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'fries-bacon', name: 'Fries (Bacon-Loaded)', description: 'Golden fries topped with crispy bacon bits, fresh green onions and lots of cheese on the top.', category: 'Starters & Sides', price: 9.99, image: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'fries-truffle', name: 'Fries (Truffle Parmesan)', description: 'Crispy fries tossed in truffle oil and sprinkled with parmesan cheese.', category: 'Starters & Sides', price: 9.99, image: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'cheese-knots', name: 'Cheese Garlic Knots (6 pcs)', description: 'Rich and buttery rolls made with white garlic sauce, whole milk mozzarella, and minced garlic. Served with your favorite dipping sauce.', category: 'Starters & Sides', dietary: ['V'], price: 6.99, image: '/ManagersPizza_CheeseKnots.png' },
+  { id: 'cheese-knots-jalapeno', name: 'Jalapeno Cheese Knots (6 pcs)', description: 'Rich and buttery rolls made with white garlic sauce, whole milk mozzarella, and jalapeños. Served with your favorite dipping sauce.', category: 'Starters & Sides', dietary: ['V'], price: 7.99, image: '/ManagersPizza_JalapenosCheeseKnots.png' },
+  { id: 'cheese-knots-bacon', name: 'Bacon-Loaded Cheese Knots (6 pcs)', description: 'Rich and buttery rolls made with white garlic sauce, whole milk mozzarella, and smoked bacon. Served with your favorite dipping sauce. ', category: 'Starters & Sides', price: 9.99, image: '/ManagersPizza_BaconCheeseKnots.png' },
 
   // 🧀 Mac n’ Cheese
   { id: 'mac-classic', name: 'Mac n’ Cheese (Classic)', description: 'Creamy, cheesy, and comforting—our classic mac and cheese is made with tender elbow pasta smothered in a rich blend of melted cheeses. A timeless favorite!', price: 8.99, category: 'Mac n’ Cheese', dietary: ['V'], image: 'macncheese.png' },
   { id: 'mac-buffalo-chicken', name: 'Mac n’ Cheese (Buffalo Chicken)', description: 'Our creamy mac and cheese gets a bold twist! Topped with spicy buffalo chicken, drizzled with ranch, and finished with a hint of heat. Comfort food with a kick.', price: 10.99, category: 'Mac n’ Cheese', image: '/ManagersPizza_BuffaloMacnCheese.png' },
 
   // 🥗 Salads
-  { id: 'salad-garden', name: 'Garden Salad', description: 'Fresh iceberg lettuce, cucumbers, olives, cherry tomatoes, carrots, and mozzarella cheese with your choice of dressing. ', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-greek', name: 'Greek Salad', description: 'Spring mix, green olives, feta cheese, cherry tomatoes, cucumber with the Italian dressing.', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-caesar', name: 'Caesar Salad', description: 'Fresh romaine lettuce, croutons, and Parmesan cheese with Caesar dressing.', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-chicken-caesar', name: 'Chicken Caesar Salad + $3', description: 'Romaine lettuce, grilled chicken, parmesan cheese, croutons with caesar dressing. ', price: 11.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-high-protein', name: 'High Protein Salad', description: 'Spring mix,Garbanzo beans,broccoli,marinated paneer/chicken, sunflower seeds with side of blue cheese. ', price: 11.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'salad-antipasto', name: 'Antipasto Salad', description: 'Fresh iceberg lettuce, salami, ham, mozzarella cheese, cherry tomatoes, cucumbers, and red onions with balsamic vinaigrette.', price: 11.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'salad-garden', name: 'Garden Salad', description: 'Fresh iceberg lettuce, cucumbers, olives, cherry tomatoes, carrots, and mozzarella cheese with your choice of dressing. ', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800', sizes: [{ name: 'Individual', price: 8.99 }, { name: 'Family', price: 15.99 }] },
+  { id: 'salad-greek', name: 'Greek Salad', description: 'Spring mix, green olives, feta cheese, cherry tomatoes, cucumber with the Italian dressing.', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800', sizes: [{ name: 'Individual', price: 8.99 }, { name: 'Family', price: 15.99 }] },
+  { id: 'salad-caesar', name: 'Caesar Salad', description: 'Fresh romaine lettuce, croutons, and Parmesan cheese with Caesar dressing.', price: 8.99, category: 'Salads', dietary: ['V'], image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800', sizes: [{ name: 'Individual', price: 8.99 }, { name: 'Family', price: 15.99 }] },
+  { id: 'salad-antipasto', name: 'Antipasto Salad', description: 'Fresh iceberg lettuce, salami, ham, mozzarella cheese, cherry tomatoes, cucumbers, and red onions with balsamic vinaigrette.', price: 8.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800', sizes: [{ name: 'Individual', price: 8.99 }, { name: 'Family', price: 15.99 }] },
+  { id: 'salad-high-protein', name: 'High Protein Salad', description: 'Spring mix, Garbanzo beans, broccoli, marinated paneer/chicken, sunflower seeds with side of blue cheese. ', price: 8.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800', sizes: [{ name: 'Individual', price: 8.99 }, { name: 'Family', price: 15.99 }] },
+  { id: 'salad-chicken-caesar', name: 'Chicken Caesar Salad', description: 'Romaine lettuce, grilled chicken, parmesan cheese, croutons with caesar dressing. ', price: 11.99, category: 'Salads', image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800', sizes: [{ name: 'Individual', price: 11.99 }, { name: 'Family', price: 18.99 }] },
 
   // 🥪 Subs & Sandwiches
-  { id: 'sub-spicy-chicken', name: 'Spicy Chicken Sub', description: '- A juicy,spicy crispy chicken breast served on a fresh sandwich roll with lettuce, onions,tomato,pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'sub-buffalo-chicken', name: 'Buffalo Chicken Sub', description: 'Sandwich-A juicy, crispy buffalo chicken breast served on a fresh sandwich roll with lettuce, onions, tomato,pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: '/ManagersPizza_BuffaloChickenSandwich.png' },
-  { id: 'sub-crispy-chicken', name: 'Crispy Chicken Sub', description: 'A juicy, crispy chicken breast served on a fresh sandwich roll with lettuce, onions, tomato, pickles and special sauce.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'sub-bbq-chicken', name: 'BBQ Chicken Sub', description: 'A juicy, grilled BBQ chicken served on a fresh sandwich roll with lettuce, onion, tomato, pickles and special sauce. ', category: 'Subs & Sandwiches', price: 11.99, image: '/BBQChickenSandwich.png' },
-  { id: 'sub-chicken-parmesan', name: 'Chicken Parmesan Sub', description: 'A crispy fried chicken breast topped with marinara sauce and melted mozzarella served on a fresh sandwich roll.', category: 'Subs & Sandwiches', price: 12.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'sub-teriyaki-chicken', name: 'Teriyaki Chicken Sub', description: 'A juicy grilled teriyaki chicken served on a fresh sandwich roll with lettuce, onion, tomatoes and pickles.', category: 'Subs & Sandwiches', price: 11.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'sub-crispy-chicken', name: 'Crispy Chicken Sandwich', description: 'A juicy, crispy chicken breast served on a fresh sandwich roll with lettuce, onions, tomato, pickles and special sauce.', category: 'Subs & Sandwiches', price: 8.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'sub-spicy-chicken', name: 'Spicy Chicken Sandwich', description: 'A juicy, spicy crispy chicken breast served on a fresh sandwich roll with lettuce, onions, tomato, pickles and special sauce.', category: 'Subs & Sandwiches', price: 9.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'sub-buffalo-chicken', name: 'Buffalo Chicken Sandwich', description: 'A juicy, crispy buffalo chicken breast served on a fresh sandwich roll with lettuce, onions, tomato, pickles and special sauce.', category: 'Subs & Sandwiches', price: 9.99, image: '/ManagersPizza_BuffaloChickenSandwich.png' },
+  { id: 'sub-bbq-chicken', name: 'BBQ Chicken Sandwich', description: 'A juicy, grilled BBQ chicken served on a fresh sandwich roll with lettuce, onion, tomato, pickles and special sauce. ', category: 'Subs & Sandwiches', price: 9.99, image: '/BBQChickenSandwich.png' },
+  { id: 'sub-chicken-parmesan', name: 'Chicken Parmesan Sandwich', description: 'A crispy fried chicken breast topped with marinara sauce and melted mozzarella served on a fresh sandwich roll.', category: 'Subs & Sandwiches', price: 9.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'sub-teriyaki-chicken', name: 'Teriyaki Chicken Sandwich', description: 'A juicy grilled teriyaki chicken served on a fresh sandwich roll with lettuce, onion, tomatoes and pickles.', category: 'Subs & Sandwiches', price: 10.99, image: 'https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sub-tandoori-chicken', name: 'Tandoori Paneer/Chicken Sandwich', description: 'A flavorful tandoori-spiced based sandwich with your choice of chicken or paneer ,served on a fresh sandwich roll with lettuce, onions, tomato and pickles.', category: 'Subs & Sandwiches', price: 12.99, image: '/ManagersPizza_TandooriChickenSandwich.png' },
   { id: 'sub-butter-chicken', name: 'Butter Paneer/Chicken Sandwich', description: 'A flavorful Buttery-spiced based sandwich with your choice of chicken or paneer, served on a fresh sandwich roll with lettuce, onions, tomato and pickles.', category: 'Subs & Sandwiches', price: 12.99, image: '/ManagersPizza_ButterPaneerSandwich.png' },
   // 🍰 Desserts
-  { id: 'mini-churros', name: 'Mini Churros', description: '16 mini churros coated in Cinnamon sugar.', category: 'Desserts', dietary: ['V'], price: 6.99, image: '/ManagersPizza_Churros.png' },
-  { id: 'nutella-pizza', name: 'Nutella Pizza (10")', description: 'Golden-baked dough layered with warm Nutella, and topped with a sprinkle of powdered sugar.', category: 'Desserts', dietary: ['V'], price: 10.99, image: '/Manager_sPizza_NutellaPizza.png' },
-  { id: 'cinnamon-dessert-pizza', name: 'Cinnamon Dessert Pizza (10")', description: 'A warm, soft pizza crust topped with buttery cinnamon sugar.', category: 'Desserts', dietary: ['V'], price: 9.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'tiramisu', name: 'Tiramisu', description: 'A rich creamy Italian dessert with coffee, cream and cocoa.', category: 'Desserts', dietary: ['V'], price: 7.99, image: '/ManagersPizza_Tiramisu.png' },
-  { id: 'cheesecake-slice', name: 'Cheesecake Slice', description: 'Rich and velvety cheesecake slice with a buttery base.', category: 'Desserts', dietary: ['V'], price: 7.99, image: '/ManagersPizza_CheeseCake.png' },
-  { id: 'cookie-pizza', name: 'Cookie Pizza', description: 'A decadent 8-inch, soft and chewy chocolate chip cookie baked until golden brown. Made with semi-sweet chocolate chips', category: 'Desserts', dietary: ['V'], price: 8.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'mini-churros', name: 'Mini Churros', description: '16 mini churros coated in Cinnamon sugar.', category: 'Desserts', dietary: ['V'], price: 8.99, image: '/ManagersPizza_Churros.png' },
+  { id: 'nutella-pizza', name: 'Nutella Pizza (10")', description: 'Golden-baked dough layered with warm Nutella, and topped with a sprinkle of powdered sugar.', category: 'Desserts', dietary: ['V'], price: 9.99, image: '/Manager_sPizza_NutellaPizza.png' },
+  { id: 'cinnamon-dessert-pizza', name: 'Cinnamon Dessert Pizza (10")', description: 'A warm, soft pizza crust topped with buttery cinnamon sugar.', category: 'Desserts', dietary: ['V'], price: 10.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'tiramisu', name: 'Tiramisu', description: 'A rich creamy Italian dessert with coffee, cream and cocoa.', category: 'Desserts', dietary: ['V'], price: 10.99, image: '/ManagersPizza_Tiramisu.png' },
+  { id: 'cheesecake-slice', name: 'Cheesecake Slice', description: 'Rich and velvety cheesecake slice with a buttery base.', category: 'Desserts', dietary: ['V'], price: 11.99, image: '/ManagersPizza_CheeseCake.png' },
+  { id: 'cookie-pizza', name: 'Cookie Pizza', description: 'A decadent 8-inch, soft and chewy chocolate chip cookie baked until golden brown. Made with semi-sweet chocolate chips', category: 'Desserts', dietary: ['V'], price: 11.99, image: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&w=800' },
   // --- Beverages: Cans ($2.50) ---
   { id: 'can-cocacola', name: 'Coca-Cola', description: 'Classic Coca-Cola in a 12oz can', category: 'Cans', price: 2.50, image: '/coke-can.png' },
   { id: 'can-fanta', name: 'Fanta', description: 'Orange Fanta in a 12oz can', category: 'Cans', price: 2.50, image: '/fanta-can.png' },
